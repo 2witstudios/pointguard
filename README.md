@@ -1,8 +1,10 @@
-# skills
+# pointguard
 
-Jono's universal agent skills — workflow commands that work across any project,
-kept separate from [paralleldrive/aidd](https://github.com/paralleldrive/aidd)
-so they can diverge freely. PageSpace-aware where it helps, never required.
+Agent tooling. Starts with universal skills; other tools land here as they come.
+
+The skills are workflow commands that work across any project, kept separate
+from [paralleldrive/aidd](https://github.com/paralleldrive/aidd) so they can
+diverge freely. PageSpace-aware where it helps, never required.
 
 ## Skills
 
