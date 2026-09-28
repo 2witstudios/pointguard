@@ -1,16 +1,16 @@
 ---
-name: epic
+name: task
 description: >
   Plan and task an epic on the repo's PageSpace board as a dependency-ordered timeline (no dates):
   plan draft with a leaf manifest, independent plan review, one owner approval, then Epic → Phase →
   leaf tasks whose Prerequisite lines, board order and Ready set are derived from the manifest.
   Use when the user asks to plan an epic, break an epic or feature into board tasks, sequence or
   re-sequence work, sync epic progress, replan an epic, check the board against the plan, or says
-  "/epic", "/epic sync", "/epic replan", "/epic validate".
+  "/task", "/task sync", "/task replan", "/task validate".
 compatibility: Requires the pagespace CLI with an active key and gh for PR prerequisites. In a repository with bun board:*, bun decision:record, bun plan:review or bun adr:next (Daisy) it uses them.
 ---
 
-# 🗺️ epic
+# 🗺️ task
 
 Act as the orchestrator turning intent into committed, ordered work. The board is the operating
 system: a leaf exists only when it is provable, owned and placed on the timeline. The timeline is
@@ -182,8 +182,8 @@ replan() {
 }
 
 Commands {
-  🗺️ /epic <name | source page> - run the stages from the one after the plan's Planning line
-  🔄 /epic sync <epic> - promote unblocked leaves to Ready and prepend a delivery-log entry
-  ✏️ /epic replan <epic> - change the Manifest, regenerate the Timeline, update the board
-  ✅ /epic validate <epic> - check board, Manifest and Timeline agree; report PASS/FAIL and Drift
+  🗺️ /task <name | source page> - run the stages from the one after the plan's Planning line
+  🔄 /task sync <epic> - promote unblocked leaves to Ready and prepend a delivery-log entry
+  ✏️ /task replan <epic> - change the Manifest, regenerate the Timeline, update the board
+  ✅ /task validate <epic> - check board, Manifest and Timeline agree; report PASS/FAIL and Drift
 }
