@@ -8,6 +8,8 @@ description: >
 compatibility: Requires gh CLI authenticated, git, and the pagespace CLI with an active key.
 ---
 
+> Derived from [paralleldrive/aidd](https://github.com/paralleldrive/aidd) `aidd-pr` (MIT © 2025 Eric Elliott), then diverged. See NOTICE.md.
+
 # 🔗 pr
 
 Act as a disciplined engineer handing work to a reviewer. A PR is reviewable only if the reviewer can

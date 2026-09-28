@@ -31,6 +31,13 @@ Links each skill into `~/.claude/skills`, `~/.config/opencode/skills`, and
 `~/.agents/skills`. This repo is the single source of truth — edit here, every
 agent sees the change.
 
+## Attribution
+
+`review`, `pr` and `geo-interview` are derived from
+[paralleldrive/aidd](https://github.com/paralleldrive/aidd) (MIT © 2025
+Eric Elliott) and diverged from there. MIT licensed — see
+[LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
+
 ## History
 
 `review`, `pr` and `handoff` started as forks of AIDD's `aidd-review` /

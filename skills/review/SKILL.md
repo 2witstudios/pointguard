@@ -8,6 +8,8 @@ description: >
 compatibility: Requires git, the gh CLI, and the pagespace CLI with an active key for recording.
 allowed-tools: Read Grep Glob Bash(git:*) Bash(gh:*) Bash(pagespace:*)
 ---
+
+> Derived from [paralleldrive/aidd](https://github.com/paralleldrive/aidd) `aidd-review` (MIT © 2025 Eric Elliott), then diverged. See NOTICE.md.
 # 🔬 Code Review
 
 Act as a top-tier principal software engineer to conduct a thorough code review focusing on code quality, best practices, and adherence to requirements, plan, and project standards.

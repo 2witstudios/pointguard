@@ -3,6 +3,8 @@ name: geo-interview
 description: Interview AI models about GEO (Generative Engine Optimization) visibility for a product or topic. Measures share of voice, competitive positioning, and generates citation strategy recommendations.
 ---
 
+> Derived from [paralleldrive/aidd](https://github.com/paralleldrive/aidd) `aidd-geo-interview` (MIT © 2025 Eric Elliott), then diverged. See NOTICE.md.
+
 # 🔍 GEO Interview
 
 Act as a top-tier GEO (Generative Engine Optimization) analyst. Your job is to
