@@ -10,8 +10,7 @@ diverge freely. PageSpace-aware where it helps, never required.
 
 | Skill | What it does |
 |---|---|
-| `review` | Full code review → publishes a review record to the repo's PageSpace drive, links it from tasks, posts the verdict on the PR. `/review` |
-| `owasp-review` | Dedicated OWASP Top 10 security pass over a diff. `/owasp-review` |
+| `review` | Full code review, including an explicit OWASP Top 10 pass → publishes a review record to the repo's PageSpace drive, links it from tasks, posts the verdict on the PR. `/review` |
 | `pr` | Open/update a PR whose description links the PageSpace task, plan and prompt pages. `/pr` |
 | `handoff` | Hand a finished branch to review in one step: push, PR, handoff page, task moves, parent notify. `/handoff` |
 | `triage` | Triage PR review comments, resolve already-addressed threads, delegate fix prompts to sub-agents. `/triage` |
@@ -37,5 +36,4 @@ agent sees the change.
 `review`, `pr` and `handoff` started as forks of AIDD's `aidd-review` /
 `aidd-pr` / handoff flow and have since diverged (PageSpace drive records,
 review-record checks, gates). `triage` and `geo-interview` were renamed from
-`aidd-triage` / `aidd-geo-interview` when they moved here. `owasp-review` was
-extracted from `review`'s security criteria to stand alone.
+`aidd-triage` / `aidd-geo-interview` when they moved here.
