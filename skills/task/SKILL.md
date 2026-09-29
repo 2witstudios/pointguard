@@ -134,6 +134,7 @@ task() {
   1. Create `Delivery log — <Epic>` in Plans/<Epic> if missing.
   2. Reuse or create `Epic — <Name>` under Tasks, each `Phase — <Name>` under the epic, and each leaf whose Manifest row has no Page ID under its phase. Titles: `<CODE>-<P>.<N> — <Title>`, with `(human-only)` after the code when Owner is a human (keep titles under ~100 chars). Priority: high for critical-path leaves, otherwise medium. Human-only leaves are assigned to the named human when their user id is known.
   3. Write every new Page ID into the Manifest.
+  Guard: if a dependency change would leave a leaf at Ready or later depending on an unfinished prerequisite, stop and report it; only apply after the orchestration owner has paused that leaf. Never demote it yourself.
   Pass 2 — bodies and order (all page ids now exist):
   4. Leaf bodies: the Leaf criteria verbatim, then Related pages: Plan, Conventions, one `Prerequisite:` line per declared dependency (leaf mention or external reference), one `Prerequisite (single-writer <resource>):` line per single-writer edge. For existing leaves, rewrite only the Related prerequisite lines; never their criteria.
   5. Epic and phase bodies: closing criteria from the Phases list ("Given every child Done and <criterion>, should close") and Related pages (Plan, Conventions, and Delivery log on the epic). Complete the plan's own Related line.
@@ -149,7 +150,7 @@ validate() {
   - each leaf's Prerequisite lines equal its derived-graph edges and external prerequisites;
   - no cycles and no unknown codes; every dependency sits in an earlier stage;
   - the Timeline section is exactly what deriveTimeline emits;
-  - human-only leaves carry the marker and no agent assignee;
+  - human-only leaves carry the marker; when the Manifest owner's user id is known the assignee is that owner, otherwise no agent assignee;
   - phase and leaf order match the Timeline.
   Leaves under the epic with no Manifest row (builder follow-ups) are Drift, not failures: list them and fold them in with replan.
   Any FAIL => fix the Manifest (then regenerate) or the board to match it, and validate again.
@@ -166,7 +167,7 @@ handOff() {
 ### sync — keep the timeline honest
 sync() {
   1. Read the board statuses and the plan. Run validate's checks without fixing anything.
-  2. promote().
+  2. Confirm the plan carries `Approved by <owner>, <date>.` for its current revision. Without it, skip promote(): leave every pending leaf unchanged and say so in the log entry. Otherwise promote().
   3. Prepend a dated entry to `Delivery log — <Epic>`: `<YYYY-MM-DD>: <done>/<total> leaves Done · timeline stage <s> of <S> (lowest stage with an unfinished leaf) · Ready: … · In progress: … · In review: … · Blocked: … (why) · Human gates open: … · Drift: …`.
   4. A leaf listed as Blocked in an entry more than 24h old and still blocked => post to Incidents when the drive has that channel.
   5. Every leaf Done and a closing review exists => tell the owner; never mark the epic Done yourself.
@@ -174,6 +175,7 @@ sync() {
 
 ### replan — change without drift
 replan() {
+  0. A dependency change that leaves a Ready-or-later leaf depending on unfinished prerequisites is rejected unless the orchestration owner has paused that leaf first (back to pending); never leave a Ready leaf behind an unfinished prerequisite.
   1. Edit the Manifest, Phases and Leaf criteria first (add, split, merge, re-depend, drop; new leaves take new codes or suffixes; fold in Drift leaves as rows with their existing Page IDs).
   2. Regenerate the Timeline. Add `Revision <n> (<YYYY-MM-DD>): <what changed and why>`.
   3. A change to a delegated leaf's criteria goes to whoever delegated it; do not edit it.
