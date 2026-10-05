@@ -1,7 +1,7 @@
 # Board commands
 
 Exact `pagespace` recipes for the tasking, validate and sync stages. Where the repo has
-`bun board:*` (Daisy), use the equivalent in the last column; it adds hash-checked writes.
+`bun board:*` (init-offense projects), use the equivalent in the last column; it adds hash-checked writes.
 
 Every task is backed by its own TASK_LIST page (`pageId` in the create/list output). Its
 subtasks are created on that page, and its body is that page's content.

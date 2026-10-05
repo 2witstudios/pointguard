@@ -34,7 +34,7 @@ Constraints {
 
 ### 1 — Resolve the drive and the role
 resolveContext() {
-  1. Read the repo's AGENTS.md / CLAUDE.md for the PageSpace drive id and the artifact conventions page. No drive declared => say so, open a normal PR, stop here.
+  1. Read the repo's `project.config.json` (`pagespace.driveId`, `pagespace.pages.conventions`) or AGENTS.md / CLAUDE.md for the PageSpace drive id and the artifact conventions page. No drive declared => say so, open a normal PR, stop here.
   2. Read the conventions page once (folders, naming, who may write what).
   3. Follow the repo's board rule. Default: every agent keeps its own tasks current up to In Review and publishes its own artifact pages; nobody edits a delegated task's criteria; Done comes from an independent review record.
 }
@@ -70,7 +70,7 @@ Builder: <your agent id (PU_AGENT_ID), or "owner">
 No agent merges this PR; the owner may merge before the independent review lands.
 ```
 
-The `Builder:` line is required where the repo checks review records (e.g. Daisy, ADR 0035): the check compares it with the record's reviewer, and a PR without it never passes.
+The `Builder:` line is required where the repo checks review records (a `review-record` workflow; see the repo's `docs/development/review-record.md`): the check compares it with the record's reviewer, and a PR without it never passes.
 
 Criteria are the bullets above the "Related pages" block of each task page, quoted faithfully, one row each. A criterion that is blocked or not met gets a row saying so — never omit it.
 
@@ -80,7 +80,7 @@ openOrUpdate() {
   none => `gh pr create --base <default> --title "<conventional title>" --body-file <file>`
   Write the body to a scratch file whose name is unique to this branch (e.g. `<scratchpad>/pr-body-<branch with / replaced by ->.md`); a shared name let one agent publish another's body (PR #9 went up with PR #10's). Never inline multi-line bodies in the shell.
   Verify after writing: `gh pr view <n> --json body --jq .body` must equal the file (ignoring a trailing newline). A mismatch => rewrite it with `gh pr edit` and check again; never report a PR whose published body you did not verify.
-  Requesting the merge is not this skill's job. An autonomous agent requests it only with `gh pr merge --auto --merge`, and only where the repository's required review check is live (Daisy: ADR 0035 section 4); otherwise it reports "ready for owner merge" to its parent. It never merges directly.
+  Requesting the merge is not this skill's job. An autonomous agent requests it only with `gh pr merge --auto --merge`, and only where the repository's required review check is live (the live `main` ruleset requires `review-record`); otherwise it reports "ready for owner merge" to its parent. It never merges directly.
 }
 
 ### 5 — Link back

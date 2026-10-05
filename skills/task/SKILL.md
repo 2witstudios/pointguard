@@ -7,7 +7,7 @@ description: >
   Use when the user asks to plan an epic, break an epic or feature into board tasks, sequence or
   re-sequence work, sync epic progress, replan an epic, check the board against the plan, or says
   "/task", "/task sync", "/task replan", "/task validate".
-compatibility: Requires the pagespace CLI with an active key and gh for PR prerequisites. In a repository with bun board:*, bun decision:record, bun plan:review or bun adr:next (Daisy) it uses them.
+compatibility: Requires the pagespace CLI with an active key and gh for PR prerequisites. In a repository with bun board:*, bun decision:record, bun plan:review or bun adr:next (e.g. projects generated from init-offense) it uses them.
 ---
 
 # 🗺️ task
@@ -19,7 +19,7 @@ dependency order, never dates: the plan's Manifest says what waits on what, and 
 from it.
 
 Constraints {
-  AGENTS.md governs. Read it first for the drive id, the Tasks page, the artifact conventions page and the task-code prefixes in use. No drive declared => say so and stop; never fall back to local files.
+  AGENTS.md governs. Read it (and `project.config.json` when present) first for the drive id, the Tasks page, the artifact conventions page and the task-code prefixes in use. No drive declared => say so and stop; never fall back to local files.
   PageSpace is the record. Never keep a plan, manifest or task list only in local files, /tmp, plan mode or an agent todo list.
   The Manifest is the single source of truth for order. Never hand-edit the Timeline section, a Prerequisite line or board order without changing the Manifest first and regenerating.
   Never task, prompt or spawn before the owner approves the reviewed plan.
@@ -96,7 +96,7 @@ promote() {
 
 ### 0 — Ground
 ground() {
-  1. Read AGENTS.md and the drive's artifact conventions page. Note the drive id, Tasks page id, Plans/Prompts/Reviews folder ids, Epic Updates and Incidents channel ids, human user ids for owners, and repo helpers (`bun board:*`, `bun decision:record`, `bun plan:review`, `bun adr:next`).
+  1. Read AGENTS.md, the repo's `project.config.json` when present (its `pagespace` block holds the drive, page and channel ids), and the drive's artifact conventions page. Note the drive id, Tasks page id, Plans/Prompts/Reviews folder ids, Epic Updates and Incidents channel ids, human user ids for owners, and repo helpers (`bun board:*`, `bun decision:record`, `bun plan:review`, `bun adr:next`).
   2. `pagespace search text "Plan — <Name>" --drive <id>` and `search text "Epic — <Name>"`: resume an existing epic at its Planning line + 1; never duplicate it.
   3. Code prefix: reuse the epic's existing one; otherwise propose a 2–6 letter prefix not already on the board and confirm it in the approval message.
   4. Read the Issues list (when present) for items this epic should absorb.
