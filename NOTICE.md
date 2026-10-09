@@ -9,6 +9,7 @@ Derived skills (forked or adapted from AIDD, then diverged):
 - `skills/review` — from AIDD `aidd-review`
 - `skills/pr` — from AIDD `aidd-pr`
 - `skills/geo-interview` — from AIDD `aidd-geo-interview`
+- `skills/rtc` — from AIDD `aidd-rtc`
 
 Dependent on AIDD skills at runtime (not included here; install AIDD separately
 or the references degrade gracefully):
