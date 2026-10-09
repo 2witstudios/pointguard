@@ -33,8 +33,8 @@ Both contexts also carry this CSP: `default-src 'none'; img-src data: https:; st
 
 - Inline `<script>` runs; `<script src="https://cdn...">` is BLOCKED (`script-src` has no https: source). No CDN frameworks — write vanilla JS.
 - External stylesheets are blocked EXCEPT Google Fonts: a `<link>` to `fonts.googleapis.com` plus font files from `fonts.gstatic.com` are explicitly allowlisted.
-- `<img src="https://...">` and `data:` images are allowed by CSP — but the CSS sanitizer rewrites any external `url()` in CSS to `url("")`, so `background-image: url(https://...)` dies even though `<img>` works. In CSS, use `data:` URIs (image/* and font/* MIME types only). The sanitizer also strips `@import`, `expression()`, `javascript:`, `behavior:`, and `data:text/html`.
-- `fetch()`/XHR to anything is blocked (no `connect-src`), except the wired-form submit endpoint on published pages.
+- `<img src="https://...">` and `data:` images are allowed by CSP — but the CSS sanitizer rewrites any external `url()` in CSS to `url("")`, so `background-image: url(https://...)` dies even though `<img>` works. In CSS, use `data:` URIs (image MIME types only; data font URLs are blocked by font-src). The sanitizer also strips `@import`, `expression()`, `javascript:`, `behavior:`, and `data:text/html`.
+- In-app `fetch()`/XHR connections are blocked by CSP. Published pages allow connections only to the PageSpace app origin; this is a CSP allowance, not app authorization or a limitation to the wired-form endpoint.
 
 DO: `<link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">`, `<img src="https://example.com/photo.jpg">`, inline `<script>` for all interactivity.
 DON'T: `<script src="https://cdn.jsdelivr.net/npm/react"></script>`, `fetch('https://api.example.com/...')`, `background: url(https://example.com/bg.jpg)`.
@@ -127,7 +127,7 @@ Publishing renders the canvas to a standalone HTML artifact served at `https://<
 ## Common pitfalls
 
 - DON'T assume CDN libraries, external scripts, or external stylesheets (Google Fonts is the sole styling exception). Everything ships inline.
-- DON'T call APIs — no `fetch` to PageSpace or anywhere else; the only network write is a wired form's submit on the published page.
+- In-app CSP blocks `fetch`/XHR connections. Published CSP permits connections to the PageSpace app origin, not arbitrary hosts; CORS and app authorization still apply. Prefer wired forms for supported public submissions and never assume a logged-in session.
 - DON'T rely on `localStorage`, cookies, or cross-page JS state; each page is standalone and the origin is opaque.
 - DON'T use `/api/files/...` for file embeds — always `/dashboard/{driveId}/{filePageId}/view`.
 - DON'T write full `<html>` documents expecting the head to render in-app; write fragments and let publish-time extraction handle meta.
