@@ -3,7 +3,7 @@ name: pagespace-canvas-websites
 description: >
   Builds websites, landing pages, dashboards, forms and interactive pages on PageSpace CANVAS pages: HTML/CSS/JS authoring, the iframe sandbox and CSP rules, theming, linking pages, embedding uploaded files, contact/signup forms, and publishing to a public site. Use when building, styling, publishing or fixing a PageSpace CANVAS page or website.
 ---
-> **Source:** PageSpace's built-in `/canvas-websites` skill, copied verbatim from the app
+> **Source:** Adapted from PageSpace's built-in `/canvas-websites` skill in the app
 > (`apps/web/src/lib/ai/skills/bodies/canvas-websites.ts`). The body below was written for the in-app agent
 > and names its tools. From outside the app, use the `pagespace` CLI, `@pagespace/sdk` or
 > `pagespace mcp` (see /pagespace-cli, /pagespace-sdk) — the tool mapping is in the
@@ -17,27 +17,27 @@ You are building on a CANVAS page: raw HTML/CSS/JS stored as the page's content,
 - The page content IS the HTML. A shared renderer wraps it in a generated document — doctype, `<head>` (charset, viewport, title, CSP), a baseline reset (`html,body{margin:0;padding:0}`), then your markup inside a real `<body>`. The in-app iframe and the published page render from the same document, so what you see in-app is what publishes.
 - Write a body FRAGMENT, not a full document. If you write a full document with an `<html>` tag, it is unwrapped: only the body content and any `<style>` blocks survive. The unwrap triggers ONLY on an `<html>` tag — a bare `<head>`/`<body>` pair without `<html>` is NOT unwrapped, and those tags land verbatim inside the rendered body. So: either a plain fragment (preferred) or a complete `<html>` document, never a partial shell. SEO/OG meta from a hand-written head is honored at publish time (see Publishing), but in-app everything else in that head is discarded.
 - `<style>` blocks anywhere in your HTML are extracted, sanitized, and hoisted into the generated `<head>`, after the baseline reset — your `html`/`body` rules still win.
-- `<script>` tags are preserved verbatim and execute. Isolation is by origin (the sandbox), not by a script sanitizer — write real interactive JS freely, but inline only (see the sandbox rules).
+- `<script>` tags are preserved verbatim and execute. Isolation is by origin (the sandbox), not by a script sanitizer — write interactive JS inline in baseline mode; site mode also permits HTTPS external scripts (see the mode-specific CSP below).
 - Because only the UA margin is reset, full-bleed layouts work: a `min-height:100vh` section reaches the edges with no 8px gap.
 
 ## The sandbox and what it blocks
 
-In-app, the canvas renders in an iframe with `sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"` — never `allow-same-origin`. Your document is an opaque origin, walled off from the logged-in app session. Consequences:
+In-app, the canvas renders in an iframe with `sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"` — never `allow-same-origin`. Your document is an opaque origin, walled off from the logged-in app session. Consequences:
 
-- No PageSpace cookies or session. `fetch()` to app APIs will not be authenticated — and is blocked by CSP anyway.
+- No PageSpace cookies or session. `fetch()` to app APIs does not inherit the logged-in session. CSP, CORS and application authorization are separate controls.
 - Treat `localStorage`/`sessionStorage` as unavailable; keep state in JS variables in memory.
 - No DOM access to the parent app; the only channel is `postMessage` (used by the theme bridge below).
 - In-app, a `<base target="_blank">` is injected: every link without an explicit `target` opens in a new browser tab. Published pages have no base tag — links navigate normally.
 
-Both contexts also carry this CSP: `default-src 'none'; img-src data: https:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; object-src 'none'; base-uri 'none'; form-action 'none'` (on PUBLISHED pages, form-action/connect-src are widened to the PageSpace app origin unconditionally — wired forms or not; the in-app preview never widens). In practice:
+CSP depends on the persisted `siteMode` flag, for both preview and publish. The baseline (`siteMode: false` or absent) carries `default-src 'none'; img-src data: https:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; object-src 'none'; base-uri 'none'`. When a PageSpace app origin is configured, baseline preview and publish scope `connect-src` to that origin and permit forms to self/app origin; without it connections and form submissions are blocked. In baseline mode:
 
-- Inline `<script>` runs; `<script src="https://cdn...">` is BLOCKED (`script-src` has no https: source). No CDN frameworks — write vanilla JS.
-- External stylesheets are blocked EXCEPT Google Fonts: a `<link>` to `fonts.googleapis.com` plus font files from `fonts.gstatic.com` are explicitly allowlisted.
-- `<img src="https://...">` and `data:` images are allowed by CSP — but the CSS sanitizer rewrites any external `url()` in CSS to `url("")`, so `background-image: url(https://...)` dies even though `<img>` works. In CSS, use `data:` URIs (image MIME types only; data font URLs are blocked by font-src). The sanitizer also strips `@import`, `expression()`, `javascript:`, `behavior:`, and `data:text/html`.
-- In-app `fetch()`/XHR connections are blocked by CSP. Published pages allow connections only to the PageSpace app origin; this is a CSP allowance, not app authorization or a limitation to the wired-form endpoint.
+- Inline scripts run; external script hosts are blocked. External stylesheets/fonts are limited to Google Fonts.
+- HTTPS/data images are allowed. Data font URLs are blocked by baseline `font-src`.
+- Fetch/XHR is limited to the configured app origin, when present. This permits connection attempts, not authenticated access or only the wired-form endpoint.
 
-DO: `<link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">`, `<img src="https://example.com/photo.jpg">`, inline `<script>` for all interactivity.
-DON'T: `<script src="https://cdn.jsdelivr.net/npm/react"></script>`, `fetch('https://api.example.com/...')`, `background: url(https://example.com/bg.jpg)`.
+Site mode uses a wider CSP in both preview and publish: HTTPS scripts/styles/fonts, data fonts, HTTPS/WSS connections, HTTPS forms and frames, and the declared blob/data asset sources are permitted. `object-src 'none'`, `base-uri 'none'`, the deny-by-default floor and the absence of `unsafe-eval` remain. Check the page's actual mode before choosing external libraries, API connections or fonts; do not assume baseline restrictions apply to site mode.
+
+CSS sanitization also follows the page mode. Baseline mode rewrites unapproved external `url()` values to `url("")` (explicit allowed HTTPS asset hosts may be retained) and blocks external imports. Site mode preserves HTTPS CSS URLs and HTTPS `@import`; plaintext HTTP, relative and malformed URLs remain blocked. Both modes allow image/font data URI MIME types at the sanitizer, but baseline CSP still blocks data fonts. Both modes block script-execution vectors such as `expression()`, `javascript:`, `behavior:` and `data:text/html`. CSP permission alone does not override sanitizer restrictions, CORS or application authorization.
 
 ## Dark/light theming
 
@@ -81,7 +81,7 @@ Never use `/api/files/...` URLs. The `/dashboard/{driveId}/{pageId}/view` form i
 
 - In-app, the app shell detects these refs and swaps them for tokenized URLs the sandboxed iframe (which has no session) can actually load — so `<img src>` and `<a href>` work in the preview.
 - At publish, each referenced file is copied to a public CDN and the URL rewritten to it. The CDN host is also allowlisted through the CSS sanitizer, so a published CSS `background-image: url(/dashboard/.../view)` survives.
-- CSS is the caveat: IN-APP, no host is allowlisted through the CSS sanitizer, so a CSS `url()` using a `/view` ref is stripped to `url("")` — the background renders BLANK in the preview and appears only on the published page. That blank preview is EXPECTED; do not "fix" it by swapping in a different URL. Publish to verify, or use an `<img>` (works in both contexts) when the preview matters.
+- CSS is mode-dependent: baseline preview can strip a file background whose resolved HTTPS host is not allowlisted; published file CDN hosts are allowlisted. Site mode permits resolved HTTPS CSS URLs in preview and publish. Relative `/view` references still need the file rewriting path; inspect the resolved URL and page mode rather than assuming all preview backgrounds must be blank. Use an `<img>` when preview portability matters.
 - The same `/view` URL also works as a plain `<a href>` link to the file.
 - Anything you embed this way becomes PUBLIC when the page is published — don't embed files that shouldn't be.
 
@@ -101,7 +101,7 @@ Field-list constraints (validated strictly; violations reject the call):
 - A hand-written `<form>` will NOT submit until a human wires it in the Canvas page's Forms settings tab — there is no tool for that step. If you do hand-write one, give every input a real `name` attribute: the tab derives the field list from your markup.
 - The field set is FIXED at wire time. Change the inputs before wiring; afterwards, the only path is delete-and-rewire.
 - One canvas can host many forms, but each Sheet accepts only one active form.
-- Submission works on the PUBLISHED page (publish scopes the CSP to the forms endpoint). The in-app preview keeps `form-action 'none'` — test submissions on the published URL, not in-app.
+- Test submissions on the published URL for final delivery proof. Baseline preview and publish can both permit connections to the configured app origin; site mode permits HTTPS connections. The provisioned handler uses `fetch`, so a preview attempt is possible when CSP, CORS and endpoint authorization allow it; preview success is not guaranteed. Native form submission additionally depends on iframe sandbox permissions: the current CanvasFrame includes `allow-forms`; a different preview sandbox may not. Even with that token, CSP `form-action`, destination authorization and response/navigation behavior still apply. The provisioned fetch handler prevents native navigation. Do not infer authenticated access or successful submission from CSP allowance alone.
 - Optional: an element with `data-role="form-status"` inside the form shows submit status messages.
 
 DO: provision first, paste `formHtml` unchanged, style it via CSS around/atop it.
@@ -126,11 +126,11 @@ Publishing renders the canvas to a standalone HTML artifact served at `https://<
 
 ## Common pitfalls
 
-- DON'T assume CDN libraries, external scripts, or external stylesheets (Google Fonts is the sole styling exception). Everything ships inline.
-- In-app CSP blocks `fetch`/XHR connections. Published CSP permits connections to the PageSpace app origin, not arbitrary hosts; CORS and app authorization still apply. Prefer wired forms for supported public submissions and never assume a logged-in session.
+- Check `siteMode`: baseline external scripts are blocked and styling hosts are limited; site mode permits HTTPS scripts/styles/fonts.
+- Baseline connections are restricted to the configured app origin, or blocked without one; site mode permits HTTPS/WSS connections in preview and publish. CORS and application authorization still apply. Prefer wired forms for supported public submissions and never assume a logged-in session.
 - DON'T rely on `localStorage`, cookies, or cross-page JS state; each page is standalone and the origin is opaque.
 - DON'T use `/api/files/...` for file embeds — always `/dashboard/{driveId}/{filePageId}/view`.
 - DON'T write full `<html>` documents expecting the head to render in-app; write fragments and let publish-time extraction handle meta.
-- DON'T put external URLs in CSS `url()` — they are stripped; use `data:` URIs or `<img>` elements.
-- DON'T mistake a blank in-app CSS background using a `/view` file ref for a bug — CSS `url()` file refs render only on the published page.
+- Baseline CSS blocks unapproved external URLs/imports; site mode preserves HTTPS CSS URLs/imports. Use data image URIs or `<img>` where baseline restrictions apply.
+- For a blank CSS file background, check the resolved URL, asset host allowance and page mode in preview and publish; relative URLs may be blocked by sanitization.
 - DON'T edit provisioned `formHtml`, and DON'T leave links pointing at pages that won't be published.
