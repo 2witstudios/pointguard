@@ -85,14 +85,18 @@ Builders may spawn their own independent reviewers through native PurePoint,
 fix findings, request delta review and continue without owner relays or pass
 limits. Code-writing children get their own worktrees; reviewers stay read-only.
 Use stable commit snapshots; freeze a mutable worktree only while a reviewer is
-actually using it. Branch feedback records cannot substitute for main approval.
+actually using it. Request and complete reviews regardless of CI status, using
+the repository's existing review-record workflow and normal review verdicts.
+Record review scope separately from CI and verifier status; partial review does
+not establish coverage of the complete composed candidate.
 
 Update the plan/manifest when execution changes. Replan independently within the
 authorized outcome; bring scope cuts, conflicting product choices and protected
 actions to the owner. Send meaningful milestones, final delivery, genuine blockers
 or writer conflicts directly to the spawning parent; no routine acknowledgment
 loop. At handoff link exact candidate, truthful tests, open obligations and
-independent reviews. Main acceptance discharges all applicable proof obligations;
+independent reviews. Main acceptance combines complete independent review with
+required CI results and discharges all applicable proof obligations;
 production activation retains human gates.
 
 Commands: `/task <outcome>` plans/tasks within authorization; `/task sync` records

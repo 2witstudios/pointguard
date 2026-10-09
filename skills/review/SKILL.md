@@ -1,6 +1,6 @@
 ---
 name: review
-description: Independently review a branch snapshot or composed acceptance candidate, publish findings and applicable evidence, and verify fixes.
+description: Independently review a branch or PR snapshot, publish findings and a review verdict through the repository's review-record workflow, and verify fixes.
 ---
 
 # Independent review
@@ -25,33 +25,39 @@ possible. If using the builder's mutable worktree, coordinate a hold only for th
 time you actually use it, and report completion once. Another reviewer's artifact
 work does not freeze source.
 
-## Branch feedback
+## Review independently of CI
 
-When requested during implementation, publish `Review stage: branch` with the
-exact candidate, criteria inspected, verified findings and proof obligations.
-Run focused checks that can answer the current question. Missing later producers,
-expected intermediate failures or unavailable service proof are recorded gaps;
-they do not prohibit useful source feedback. Do not invent defects to express
-missing evidence or mint a main approval from branch feedback. Use the
-nonacceptance verdict `BRANCH FEEDBACK` and describe source conclusions in prose;
-never use an acceptance approval verdict for provisional feedback. This keeps
-feedback safe even before a repository deploys stage-aware verification.
+Start and finish review on the requested stable snapshot regardless of whether
+CI is pending, passing or failing. Inspect the diff, each in-scope Given/should
+criterion, contracts, security boundaries, migration integrity and earlier
+findings. Require the exact PR head and a reviewer distinct from the declared
+Builder. A new head requires relevant delta review; old approval cannot be
+reused as exact-head evidence.
 
-## Main acceptance
+Use focused checks when needed to verify a finding or answer a review question.
+Read existing exact-candidate CI evidence where useful; do not wait for all CI,
+rerun the CI suite as a review prerequisite or reproduce unchanged known failures.
+Record PASS, FAIL, NOT RUN and cached results truthfully, with source and SHA.
+Missing producers, unavailable service proof and unreviewed scope are explicit
+coverage gaps. A CI failure warrants a finding when inspection verifies a defect
+in the candidate; its status alone is not a review finding.
 
-Inspect the complete composed diff and each Given/should criterion. Confirm
-contracts, security boundaries, migration integrity, full applicable gates and
-resolution of earlier findings. Require the exact PR head and a reviewer distinct
-from the declared Builder. A new head requires relevant delta review; old approval
-cannot be reused as exact-head evidence. No unresolved blocker/major may approve.
+Publish the repository's normal review verdict: APPROVE, APPROVE WITH MINORS or
+CHANGES REQUESTED, based on reviewed code and verified findings. No unresolved
+blocker/major may approve. State partial scope and material review uncertainty
+explicitly; never claim unreviewed criteria are satisfied. Do not introduce a
+separate BRANCH FEEDBACK verdict or branch/main review approval stages. Approval
+applies to the recorded snapshot and scope; merge readiness separately requires
+complete review coverage, all required CI checks and applicable delivery proof.
 
-The repository's review-record policy determines evidence applicability. Eligible
-documentation needs actual diff/mode classification, independent contract,
-link/status/number proof, nonservice checks and a meaningful negative control.
-Runtime/security changes retain real integration and negative proof. Record
-PASS, FAIL, NOT RUN and cached results truthfully; no label or reviewer assertion
-can grant a documentation exemption for mixed, instruction or unknown changes.
-Do not rerun unchanged expensive failures merely to reproduce a known blocker.
+Reuse the repository's existing review-record primitive. In init-offense-derived
+repositories this is the exact-head Candidate/Builder/Reviewer record, the
+review-record GitHub App check and `bun review:check`. Follow its record format
+and evidence policy without inventing exemptions. If its verifier requires
+integration or negative-control evidence that is missing, publish the truthful
+review and report the verifier refusal separately. Do not fabricate evidence,
+change the review conclusion merely to match CI or delay publication until the
+verifier can pass. The verifier's status and the review verdict are distinct.
 
 ## Record and continuation
 
@@ -60,15 +66,17 @@ handoff. Without an available PageSpace drive, publish the full record as a PR
 comment and record the administration gap; reconcile it into PageSpace when
 available. If neither a drive nor PR exists, return the complete review in chat
 and identify the missing durable destination. Missing administration never
-turns absent evidence into an approval. Include Candidate SHA/PR/Builder/Reviewer, review stage, checks and date,
+turns absent evidence into proof of satisfied criteria. Include Candidate
+SHA/PR/Builder/Reviewer, review scope, checks and date,
 criteria evidence, confirmed/suspected findings, privacy/telemetry assessment and
 explicit verdict. File unfixed findings under the owning open leaf, otherwise
 Issues; in-scope findings remain part of the original delivery. Do not silently
 change delegated criteria or grant your own work Done.
 
-For acceptance, use the repository self-check and link the record from the PR
-with a verdict comment. If credentials or checks are unavailable, record the
-exact gap and continue independent review work; never fabricate a passing status.
+Run the repository self-check and link the record from the PR with a verdict
+comment. Fix record-format errors; report missing evidence or unavailable
+credentials/checks separately and complete independent review publication.
+Never fabricate a passing status.
 Report to the builder that spawned you, which fixes findings and requests delta
 review. There is no pass limit or required parent permission between passes;
 escalate only unresolved product intent or a protected action.

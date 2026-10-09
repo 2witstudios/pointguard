@@ -1,0 +1,126 @@
+{
+  "daisy": {
+    "all": {
+      "count": 219,
+      "state_counts": {
+        "closed": 217,
+        "open": 2
+      },
+      "merged": 208,
+      "median_created_to_merge_hours": 1.3222222222222222,
+      "p25_hours": 0.5519444444444445,
+      "p75_hours": 2.984722222222222
+    },
+    "date_min": "2026-09-20T13:30:06Z",
+    "date_max": "2026-10-09T15:46:37Z",
+    "numbers_min": 1,
+    "numbers_max": 219,
+    "oct1_8_created_cohort": {
+      "count": 41,
+      "state_counts": {
+        "closed": 41
+      },
+      "merged": 34,
+      "median_created_to_merge_hours": 0.9275,
+      "p25_hours": 0.5544444444444444,
+      "p75_hours": 6.444444444444445
+    },
+    "cases": [
+      {
+        "base": "main",
+        "closed_at": "2026-10-08T03:30:28Z",
+        "created_at": "2026-10-07T16:25:08Z",
+        "head_sha": "5f0f8de4fd773c21f8e869a16917a8785c047037",
+        "merged_at": "2026-10-08T03:30:28Z",
+        "number": 211,
+        "state": "closed",
+        "title": "feat(one-round): collapse the two debate systems into one Round model (ADR 0058)",
+        "user": "2witstudios"
+      },
+      {
+        "base": "main",
+        "closed_at": "2026-10-06T14:09:30Z",
+        "created_at": "2026-10-06T13:06:33Z",
+        "head_sha": "9f8a3319d2c18df6d98c1994ecc03599cc1431d7",
+        "merged_at": "2026-10-06T14:09:30Z",
+        "number": 206,
+        "state": "closed",
+        "title": "feat(web): remove debater tiers from the leaderboard (RATE-1.4.2)",
+        "user": "2witstudios"
+      },
+      {
+        "base": "main",
+        "closed_at": "2026-10-08T14:44:47Z",
+        "created_at": "2026-10-06T12:27:47Z",
+        "head_sha": "5f9f856353dc1d89700fabfb80aa53d6d09e29ad",
+        "merged_at": "2026-10-08T14:44:47Z",
+        "number": 205,
+        "state": "closed",
+        "title": "feat(ballot): speaker rubric contract and ballot components (ISSUE-348)",
+        "user": "2witstudios"
+      },
+      {
+        "base": "main",
+        "closed_at": "2026-09-30T00:34:12Z",
+        "created_at": "2026-09-29T23:28:44Z",
+        "head_sha": "d5971bd6a99ca31298810fedf8bdbcf8bbb5c4b1",
+        "merged_at": "2026-09-30T00:34:12Z",
+        "number": 140,
+        "state": "closed",
+        "title": "docs(adr): record the authorization core (AZC-1.1)",
+        "user": "2witstudios"
+      }
+    ]
+  },
+  "pagespace": {
+    "all": {
+      "count": 2448,
+      "state_counts": {
+        "open": 7,
+        "closed": 2441
+      },
+      "merged": 2311,
+      "median_created_to_merge_hours": 1.6508333333333334,
+      "p25_hours": 0.5611111111111111,
+      "p75_hours": 6.653611111111111
+    },
+    "date_min": "2025-09-17T03:29:18Z",
+    "date_max": "2026-10-09T17:11:21Z",
+    "numbers_min": 1,
+    "numbers_max": 2860,
+    "oct1_8_created_cohort": {
+      "count": 106,
+      "state_counts": {
+        "closed": 106
+      },
+      "merged": 106,
+      "median_created_to_merge_hours": 1.3688888888888888,
+      "p25_hours": 0.6952777777777778,
+      "p75_hours": 2.5077777777777777
+    },
+    "cases": [
+      {
+        "base": "pu/imago",
+        "closed_at": "2026-10-06T21:10:50Z",
+        "created_at": "2026-10-06T15:16:15Z",
+        "head_sha": "7d144d70e0c31d9d3a4dacfc8c3139c1e9fed066",
+        "merged_at": "2026-10-06T21:10:50Z",
+        "number": 2855,
+        "state": "closed",
+        "title": "feat(imago): Imago replaces the global assistant with the user's full reach (IMG-10.10)",
+        "user": "2witstudios"
+      },
+      {
+        "base": "master",
+        "closed_at": "2026-10-06T21:43:28Z",
+        "created_at": "2026-10-06T08:40:44Z",
+        "head_sha": "5c0b09ae23b0a06b0de76412b0d1700cb589907e",
+        "merged_at": "2026-10-06T21:43:28Z",
+        "number": 2852,
+        "state": "closed",
+        "title": "feat(imago): Imago UI (flag-gated, off by default)",
+        "user": "2witstudios"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1992 @@
+[
+  {
+    "pr": 205,
+    "sha": "72c11079b91ee5a49c53099a3e4c200c53d56310",
+    "date": "2026-10-08T09:44:46-05:00",
+    "subject": "Merge pull request #205 from 2witstudios/pu/ballot",
+    "files": 34,
+    "additions": 2231,
+    "deletions": 189,
+    "binary": 0
+  },
+  {
+    "pr": 209,
+    "sha": "6dffb507abdb246b75a51818796eac9ebdeff7a0",
+    "date": "2026-10-07T23:49:13-05:00",
+    "subject": "Merge pull request #209 from 2witstudios/fix/onboarding-codex-findings",
+    "files": 5,
+    "additions": 122,
+    "deletions": 22,
+    "binary": 0
+  },
+  {
+    "pr": 214,
+    "sha": "df1b108d2bf6a5fced0f0a4bee03b702f3fe8ec0",
+    "date": "2026-10-07T23:32:56-05:00",
+    "subject": "Merge pull request #214 from 2witstudios/docs/video-round-reconcile",
+    "files": 2,
+    "additions": 178,
+    "deletions": 351,
+    "binary": 0
+  },
+  {
+    "pr": 215,
+    "sha": "5f90f188beb1b3bcc3595f7c477a28fe2f35a3af",
+    "date": "2026-10-07T23:31:30-05:00",
+    "subject": "Merge pull request #215 from 2witstudios/chore/codex-launch-config",
+    "files": 2,
+    "additions": 2,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 213,
+    "sha": "238496d22288480c0b3f94409e5b3d90f538998e",
+    "date": "2026-10-07T23:23:50-05:00",
+    "subject": "Merge pull request #213 from 2witstudios/pu/api-org",
+    "files": 285,
+    "additions": 404,
+    "deletions": 348,
+    "binary": 0
+  },
+  {
+    "pr": 212,
+    "sha": "4d406eb7d4a90966b8180384165d1abce90906de",
+    "date": "2026-10-07T22:54:28-05:00",
+    "subject": "Merge pull request #212 from 2witstudios/pu/agentmd",
+    "files": 2,
+    "additions": 6,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 211,
+    "sha": "6acf9733de168dc6430d15002b829582b02e37a3",
+    "date": "2026-10-07T22:30:27-05:00",
+    "subject": "Merge pull request #211 from 2witstudios/pu/one-round-model",
+    "files": 293,
+    "additions": 23543,
+    "deletions": 43706,
+    "binary": 0
+  },
+  {
+    "pr": 210,
+    "sha": "3ef23b6e8f2ebd032fd6edf008c94b0cdc642a46",
+    "date": "2026-10-06T22:20:32-05:00",
+    "subject": "Merge pull request #210 from 2witstudios/pu/cap-adr",
+    "files": 2,
+    "additions": 265,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 208,
+    "sha": "51a0a8c18a6423fb59dbc53d8cac3b38158244c6",
+    "date": "2026-10-06T19:56:25-05:00",
+    "subject": "Merge pull request #208 from 2witstudios/pu/rounds",
+    "files": 11,
+    "additions": 1266,
+    "deletions": 82,
+    "binary": 0
+  },
+  {
+    "pr": 207,
+    "sha": "0df8f99a287068bbdb47e049d21d8461f68069c2",
+    "date": "2026-10-06T14:31:43-05:00",
+    "subject": "Merge pull request #207 from 2witstudios/pu/sharp-audit2",
+    "files": 1,
+    "additions": 27,
+    "deletions": 27,
+    "binary": 0
+  },
+  {
+    "pr": 206,
+    "sha": "fdc61a59b766704f3f56403646d862018f7cc9e8",
+    "date": "2026-10-06T09:09:29-05:00",
+    "subject": "Merge pull request #206 from 2witstudios/feat/rate-1.4.2-no-debater-tiers",
+    "files": 46,
+    "additions": 182,
+    "deletions": 546,
+    "binary": 6
+  },
+  {
+    "pr": 195,
+    "sha": "4a900aa7f926359ae57279eaa7063205a02f7e63",
+    "date": "2026-10-06T08:49:32-05:00",
+    "subject": "Merge pull request #195 from 2witstudios/pu/debate-room",
+    "files": 101,
+    "additions": 15504,
+    "deletions": 352,
+    "binary": 0
+  },
+  {
+    "pr": 204,
+    "sha": "f085b9f609d142a6702d341eac12493964c1fa3d",
+    "date": "2026-10-06T07:43:22-05:00",
+    "subject": "Merge pull request #204 from 2witstudios/feat/rate-1.4.1-standings-reads",
+    "files": 10,
+    "additions": 1014,
+    "deletions": 33,
+    "binary": 0
+  },
+  {
+    "pr": 203,
+    "sha": "8e6f3dc06db4c9b8b8dac5c772edce45427e6873",
+    "date": "2026-10-06T07:25:31-05:00",
+    "subject": "Merge pull request #203 from 2witstudios/docs/adr-0053-reconcile-bound",
+    "files": 1,
+    "additions": 13,
+    "deletions": 8,
+    "binary": 0
+  },
+  {
+    "pr": 196,
+    "sha": "ae43315b3d938c944cf486fddce8554086546985",
+    "date": "2026-10-06T06:39:35-05:00",
+    "subject": "Merge pull request #196 from 2witstudios/docs/video-adr-0053",
+    "files": 2,
+    "additions": 361,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 200,
+    "sha": "92c3dd2a5767c10d5b42d2aed93f167f54b15a41",
+    "date": "2026-10-06T06:37:50-05:00",
+    "subject": "Merge pull request #200 from 2witstudios/feat/rate-1.3-rate-debate",
+    "files": 23,
+    "additions": 2226,
+    "deletions": 38,
+    "binary": 0
+  },
+  {
+    "pr": 199,
+    "sha": "0e4b77c2284b0675ea2b2d7c7333464d5fde8a27",
+    "date": "2026-10-06T06:37:31-05:00",
+    "subject": "Merge pull request #199 from 2witstudios/feat/rate-1.2-ladders-seasons",
+    "files": 25,
+    "additions": 6369,
+    "deletions": 29,
+    "binary": 0
+  },
+  {
+    "pr": 198,
+    "sha": "f7a6e685aab8c67be51a47d2d7b630ad8af564be",
+    "date": "2026-10-05T21:32:03-05:00",
+    "subject": "Merge pull request #198 from 2witstudios/feat/rate-1.1-glicko2",
+    "files": 11,
+    "additions": 1044,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 202,
+    "sha": "43f0317026993341af183b25731ade25a7ced91e",
+    "date": "2026-10-05T20:58:39-05:00",
+    "subject": "Merge pull request #202 from 2witstudios/docs/adr-tinypool-audit-exception",
+    "files": 5,
+    "additions": 62,
+    "deletions": 10,
+    "binary": 0
+  },
+  {
+    "pr": 201,
+    "sha": "4991aef6865c32d2667dc6a49e32edb4aab3b5f4",
+    "date": "2026-10-05T20:58:19-05:00",
+    "subject": "Merge pull request #201 from 2witstudios/fix/audit-tinypool",
+    "files": 4,
+    "additions": 35,
+    "deletions": 9,
+    "binary": 0
+  },
+  {
+    "pr": 197,
+    "sha": "de9844f3b6c3f230fb92be6dd7ed23140a7d3f45",
+    "date": "2026-10-05T20:04:29-05:00",
+    "subject": "Merge pull request #197 from 2witstudios/refactor/shared-speech-recorder",
+    "files": 5,
+    "additions": 352,
+    "deletions": 110,
+    "binary": 0
+  },
+  {
+    "pr": 194,
+    "sha": "ae1f43946dd098e72f90142bb9a3b950a0394705",
+    "date": "2026-10-05T19:59:04-05:00",
+    "subject": "Merge pull request #194 from 2witstudios/pu/onboarding",
+    "files": 119,
+    "additions": 9115,
+    "deletions": 44,
+    "binary": 42
+  },
+  {
+    "pr": 193,
+    "sha": "901efa0babfaee4192ba4239c8f644327e7e5845",
+    "date": "2026-10-05T12:09:25-05:00",
+    "subject": "Merge pull request #193 from 2witstudios/feat/sidebar-toggles-and-legal-foot",
+    "files": 14,
+    "additions": 199,
+    "deletions": 175,
+    "binary": 0
+  },
+  {
+    "pr": 192,
+    "sha": "6c7add7e84200c91efa8f3b188ce6652237a101a",
+    "date": "2026-10-05T08:37:08-05:00",
+    "subject": "Merge pull request #192 from 2witstudios/fix/collapse-controls-on-top",
+    "files": 39,
+    "additions": 437,
+    "deletions": 247,
+    "binary": 18
+  },
+  {
+    "pr": 191,
+    "sha": "f14eec70caab3a09a5a731485dfff2611ee749d2",
+    "date": "2026-10-04T22:50:25-05:00",
+    "subject": "Merge pull request #191 from 2witstudios/fix/sidebar-full-height",
+    "files": 27,
+    "additions": 25,
+    "deletions": 4,
+    "binary": 24
+  },
+  {
+    "pr": 190,
+    "sha": "08eabd0edfc0c7776961a9233a0ff2d85117aca6",
+    "date": "2026-10-04T22:11:56-05:00",
+    "subject": "Merge pull request #190 from 2witstudios/fix/ai-debate-copy",
+    "files": 91,
+    "additions": 671,
+    "deletions": 1724,
+    "binary": 26
+  },
+  {
+    "pr": 188,
+    "sha": "11f9658451bd892eb8013c07abba8c7ab8849e0c",
+    "date": "2026-10-04T19:07:13-05:00",
+    "subject": "Merge pull request #188 from 2witstudios/aidb/bot-voices",
+    "files": 27,
+    "additions": 1074,
+    "deletions": 247,
+    "binary": 0
+  },
+  {
+    "pr": 189,
+    "sha": "ea84739f2eae05c7773abd0dca598dffedd74c8b",
+    "date": "2026-10-04T19:05:54-05:00",
+    "subject": "Merge pull request #189 from 2witstudios/pu/mock-ui-changes",
+    "files": 336,
+    "additions": 936,
+    "deletions": 2685,
+    "binary": 47
+  },
+  {
+    "pr": 186,
+    "sha": "751324149046e0af5409f25bd8ece894cff0a4dc",
+    "date": "2026-10-04T17:15:02-05:00",
+    "subject": "Merge pull request #186 from 2witstudios/aidb/premium-ai-debates",
+    "files": 103,
+    "additions": 13446,
+    "deletions": 27,
+    "binary": 0
+  },
+  {
+    "pr": 187,
+    "sha": "196b52c6e3fa2274e3dc3135df19b474c3d8120b",
+    "date": "2026-10-04T14:40:51-05:00",
+    "subject": "Merge pull request #187 from 2witstudios/fix/ci-green",
+    "files": 25,
+    "additions": 51,
+    "deletions": 17,
+    "binary": 18
+  },
+  {
+    "pr": 185,
+    "sha": "28f4f37952cb02fcd83fa77e1302f5fccda6bb22",
+    "date": "2026-10-03T17:35:26-05:00",
+    "subject": "Merge pull request #185 from 2witstudios/feat/mock-app",
+    "files": 330,
+    "additions": 12551,
+    "deletions": 1967,
+    "binary": 0
+  },
+  {
+    "pr": 182,
+    "sha": "3303bf7e9a0440d82496e6f420241b4991e64196",
+    "date": "2026-09-30T20:35:39-05:00",
+    "subject": "Merge pull request #182 from 2witstudios/pu/mock-ui",
+    "files": 428,
+    "additions": 31350,
+    "deletions": 389,
+    "binary": 16
+  },
+  {
+    "pr": 184,
+    "sha": "fb8f0a221e9724bc2b7439231aaaabd3f332f135",
+    "date": "2026-09-30T20:35:15-05:00",
+    "subject": "Merge pull request #184 from 2witstudios/chore/remove-agent-platform",
+    "files": 71,
+    "additions": 93,
+    "deletions": 8138,
+    "binary": 0
+  },
+  {
+    "pr": 172,
+    "sha": "136aa9bbcd32976ef42e0537e8794197f36a21a9",
+    "date": "2026-09-30T19:24:59-05:00",
+    "subject": "Merge pull request #172 from 2witstudios/pu/watch-ui-recordings",
+    "files": 52,
+    "additions": 3399,
+    "deletions": 89,
+    "binary": 0
+  },
+  {
+    "pr": 173,
+    "sha": "b52bc4d0fa9011c29050671b78bc20cb05ffea69",
+    "date": "2026-09-30T19:23:13-05:00",
+    "subject": "Merge pull request #173 from 2witstudios/pu/leaderboard-ui",
+    "files": 61,
+    "additions": 5991,
+    "deletions": 12,
+    "binary": 0
+  },
+  {
+    "pr": 175,
+    "sha": "b3a857dd7f3f78935f75c98724493a409d64fddf",
+    "date": "2026-09-30T19:20:01-05:00",
+    "subject": "Merge pull request #175 from 2witstudios/pu/train-ui-2",
+    "files": 62,
+    "additions": 5430,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 171,
+    "sha": "4948a393290b83caf5a47ba1c3ab4278ea62b01d",
+    "date": "2026-09-30T19:06:50-05:00",
+    "subject": "Merge pull request #171 from 2witstudios/pu/train-ui",
+    "files": 55,
+    "additions": 2577,
+    "deletions": 10,
+    "binary": 0
+  },
+  {
+    "pr": 169,
+    "sha": "6ba99ce5d1efe28e464f3cf561e242f4b1fb4b39",
+    "date": "2026-09-30T19:06:36-05:00",
+    "subject": "Merge pull request #169 from 2witstudios/pu/watch-ui",
+    "files": 74,
+    "additions": 4961,
+    "deletions": 14,
+    "binary": 0
+  },
+  {
+    "pr": 170,
+    "sha": "e27d3cae1820a458c93179928259db23eb78d615",
+    "date": "2026-09-30T19:06:21-05:00",
+    "subject": "Merge pull request #170 from 2witstudios/pu/judge-ui",
+    "files": 54,
+    "additions": 2206,
+    "deletions": 10,
+    "binary": 0
+  },
+  {
+    "pr": 167,
+    "sha": "8e6e52fb38ce12e9164465c2c125766cab2775d6",
+    "date": "2026-09-30T19:05:50-05:00",
+    "subject": "Merge pull request #167 from 2witstudios/pu/ranked-ui",
+    "files": 63,
+    "additions": 2732,
+    "deletions": 12,
+    "binary": 0
+  },
+  {
+    "pr": 166,
+    "sha": "e7f04f93135a2474e111fefa253fa65fe48e0351",
+    "date": "2026-09-30T19:05:42-05:00",
+    "subject": "Merge pull request #166 from 2witstudios/pu/lobby-format",
+    "files": 23,
+    "additions": 65,
+    "deletions": 130,
+    "binary": 6
+  },
+  {
+    "pr": 165,
+    "sha": "488878d85c54b58163774996713af3b70242ea27",
+    "date": "2026-09-30T19:05:29-05:00",
+    "subject": "Merge pull request #165 from 2witstudios/pu/access-longest-prefix",
+    "files": 3,
+    "additions": 120,
+    "deletions": 17,
+    "binary": 0
+  },
+  {
+    "pr": 163,
+    "sha": "1c925bfb53b46714a57118df45f400c3a46c5291",
+    "date": "2026-09-30T17:21:00-05:00",
+    "subject": "Merge pull request #163 from 2witstudios/docs/ranked-is-daisys-leagues-are-tenants",
+    "files": 8,
+    "additions": 310,
+    "deletions": 610,
+    "binary": 0
+  },
+  {
+    "pr": 164,
+    "sha": "318ff6d53a15618b7fb90e78f613f26bbec2032b",
+    "date": "2026-09-30T17:19:15-05:00",
+    "subject": "Merge pull request #164 from 2witstudios/pu/lobby-ui",
+    "files": 50,
+    "additions": 2705,
+    "deletions": 28,
+    "binary": 6
+  },
+  {
+    "pr": 162,
+    "sha": "8f7f302c7e86d1f11aefcfac8a861d25729c4ab0",
+    "date": "2026-09-30T16:04:44-05:00",
+    "subject": "Merge pull request #162 from 2witstudios/docs/room-debate-turn",
+    "files": 3,
+    "additions": 278,
+    "deletions": 24,
+    "binary": 0
+  },
+  {
+    "pr": 161,
+    "sha": "32d69f6433207613f14b63e6617dd389d9eac3a5",
+    "date": "2026-09-30T12:38:54-05:00",
+    "subject": "Merge pull request #161 from 2witstudios/pu/secret-scan-fixtures",
+    "files": 3,
+    "additions": 9,
+    "deletions": 6,
+    "binary": 0
+  },
+  {
+    "pr": 159,
+    "sha": "8611d5351261893e7b118dc1dda3717576c0a798",
+    "date": "2026-09-30T11:40:06-05:00",
+    "subject": "Merge pull request #159 from 2witstudios/pu/issues-buckets",
+    "files": 5,
+    "additions": 86,
+    "deletions": 17,
+    "binary": 0
+  },
+  {
+    "pr": 158,
+    "sha": "7ec8083d9c24ddc1666e4303cfb365271959c799",
+    "date": "2026-09-30T11:39:47-05:00",
+    "subject": "Merge pull request #158 from 2witstudios/pu/owner-session-done",
+    "files": 15,
+    "additions": 552,
+    "deletions": 49,
+    "binary": 0
+  },
+  {
+    "pr": 160,
+    "sha": "8ee67ed2900e643a8e31c555c34d909ba4809577",
+    "date": "2026-09-30T11:39:19-05:00",
+    "subject": "Merge pull request #160 from 2witstudios/pu/next-16-3-6",
+    "files": 3,
+    "additions": 13,
+    "deletions": 13,
+    "binary": 0
+  },
+  {
+    "pr": 157,
+    "sha": "37124c37c2371d80e6c9a45f8128589949995ace",
+    "date": "2026-09-30T10:39:08-05:00",
+    "subject": "Merge pull request #157 from 2witstudios/pu/auth-occupancy-flake",
+    "files": 7,
+    "additions": 123,
+    "deletions": 64,
+    "binary": 0
+  },
+  {
+    "pr": 153,
+    "sha": "f81ea1ac1e75e4fa449b4528f47faf2089ef6a55",
+    "date": "2026-09-30T10:36:42-05:00",
+    "subject": "Merge pull request #153 from 2witstudios/pu/test-state-hardening",
+    "files": 39,
+    "additions": 1867,
+    "deletions": 502,
+    "binary": 0
+  },
+  {
+    "pr": 156,
+    "sha": "180888e1e3c73499f0b86f657eddf0fdb99bd53a",
+    "date": "2026-09-30T10:15:29-05:00",
+    "subject": "Merge pull request #156 from 2witstudios/pu/e2e-final",
+    "files": 21,
+    "additions": 1294,
+    "deletions": 54,
+    "binary": 0
+  },
+  {
+    "pr": 155,
+    "sha": "6ef952685cda2e7f59d0e8b29cd6f0f71b9573f7",
+    "date": "2026-09-30T07:57:48-05:00",
+    "subject": "Merge pull request #155 from 2witstudios/pu/guard-cannot-see",
+    "files": 2,
+    "additions": 67,
+    "deletions": 3,
+    "binary": 0
+  },
+  {
+    "pr": 154,
+    "sha": "a230e4d08475cd3d6f7f92cf06a833abcde69071",
+    "date": "2026-09-30T06:49:29-05:00",
+    "subject": "Merge pull request #154 from 2witstudios/pu/e2e-page-stall",
+    "files": 25,
+    "additions": 242,
+    "deletions": 97,
+    "binary": 0
+  },
+  {
+    "pr": 152,
+    "sha": "b34b1a38fcf7292c64350a662ea35995437117a5",
+    "date": "2026-09-30T06:07:47-05:00",
+    "subject": "Merge pull request #152 from 2witstudios/pu/auth-start-guard-final",
+    "files": 5,
+    "additions": 688,
+    "deletions": 76,
+    "binary": 0
+  },
+  {
+    "pr": 146,
+    "sha": "c27d069958ccd194cc94752b1726e4b22f041e46",
+    "date": "2026-09-30T04:20:22-05:00",
+    "subject": "Merge pull request #146 from 2witstudios/pu/e2e-flake-triage",
+    "files": 15,
+    "additions": 423,
+    "deletions": 92,
+    "binary": 0
+  },
+  {
+    "pr": 151,
+    "sha": "254a2f54c169fa10970014741ef3738e35342887",
+    "date": "2026-09-30T04:17:04-05:00",
+    "subject": "Merge pull request #151 from 2witstudios/pu/auth-start-guard-loaders",
+    "files": 3,
+    "additions": 298,
+    "deletions": 7,
+    "binary": 0
+  },
+  {
+    "pr": 147,
+    "sha": "0eb855509a93af19ab2ca7f8b20f57aafe484724",
+    "date": "2026-09-30T04:00:13-05:00",
+    "subject": "Merge pull request #147 from 2witstudios/pu/test-postgres-no-leaks",
+    "files": 29,
+    "additions": 1951,
+    "deletions": 181,
+    "binary": 0
+  },
+  {
+    "pr": 150,
+    "sha": "056860642f6cc949759121f974dd5910fd29ceca",
+    "date": "2026-09-30T03:56:13-05:00",
+    "subject": "Merge pull request #150 from 2witstudios/pu/auth-client-networks-forms",
+    "files": 7,
+    "additions": 283,
+    "deletions": 37,
+    "binary": 0
+  },
+  {
+    "pr": 143,
+    "sha": "f9040c5417294f3d1f1932919c7c63d663cd6d48",
+    "date": "2026-09-30T03:46:34-05:00",
+    "subject": "Merge pull request #143 from 2witstudios/pu/auth-start-guard-minors",
+    "files": 6,
+    "additions": 464,
+    "deletions": 85,
+    "binary": 0
+  },
+  {
+    "pr": 149,
+    "sha": "f45f3226a1cb83e72e5448465efff0f2a325701a",
+    "date": "2026-09-30T02:59:01-05:00",
+    "subject": "Merge pull request #149 from 2witstudios/pu/auth-aggregate-limits-minors",
+    "files": 10,
+    "additions": 186,
+    "deletions": 23,
+    "binary": 0
+  },
+  {
+    "pr": 148,
+    "sha": "938e6d3cb879dfc3355f550f9881062725262701",
+    "date": "2026-09-30T02:30:50-05:00",
+    "subject": "Merge pull request #148 from 2witstudios/pu/auth-aggregate-limits",
+    "files": 30,
+    "additions": 970,
+    "deletions": 100,
+    "binary": 0
+  },
+  {
+    "pr": 134,
+    "sha": "cd735c9dcf9e31ba6362610a138ff957ab709c16",
+    "date": "2026-09-30T01:42:30-05:00",
+    "subject": "Merge pull request #134 from 2witstudios/pu/auth-ceiling-latency",
+    "files": 50,
+    "additions": 1996,
+    "deletions": 215,
+    "binary": 0
+  },
+  {
+    "pr": 145,
+    "sha": "747145c4452217bf46614f51744123a542d79bae",
+    "date": "2026-09-30T00:35:31-05:00",
+    "subject": "Merge pull request #145 from 2witstudios/pu/test-redis-no-leaks",
+    "files": 41,
+    "additions": 2340,
+    "deletions": 105,
+    "binary": 0
+  },
+  {
+    "pr": 144,
+    "sha": "6c78715cad87d600f309e6328238423a00b4eb37",
+    "date": "2026-09-29T22:26:49-05:00",
+    "subject": "Merge pull request #144 from 2witstudios/pu/waitlist-age",
+    "files": 5,
+    "additions": 153,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 141,
+    "sha": "5ad8bc51a56fd26cc40f9435e7e4b30cfc9de6d2",
+    "date": "2026-09-29T21:41:53-05:00",
+    "subject": "Merge pull request #141 from 2witstudios/pu/waitlist-hero",
+    "files": 19,
+    "additions": 488,
+    "deletions": 122,
+    "binary": 6
+  },
+  {
+    "pr": 142,
+    "sha": "b4747f8a0102c94571a4fc2847da18705d338b76",
+    "date": "2026-09-29T21:41:29-05:00",
+    "subject": "Merge pull request #142 from 2witstudios/pu/auth-security-h1",
+    "files": 3,
+    "additions": 94,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 139,
+    "sha": "52185804d71c041af8ff33d403d30e18a5592a1a",
+    "date": "2026-09-29T21:40:20-05:00",
+    "subject": "Merge pull request #139 from 2witstudios/pu/waitlist-adr",
+    "files": 3,
+    "additions": 198,
+    "deletions": 29,
+    "binary": 0
+  },
+  {
+    "pr": 138,
+    "sha": "ea3a626c79a93f9fe30abc40da02ecd9c85eeee4",
+    "date": "2026-09-29T21:33:47-05:00",
+    "subject": "Merge pull request #138 from 2witstudios/pu/auth-e2e-waits",
+    "files": 16,
+    "additions": 452,
+    "deletions": 74,
+    "binary": 0
+  },
+  {
+    "pr": 140,
+    "sha": "9da4ac5c8232f5cd1aedd5a618a480350fa1d111",
+    "date": "2026-09-29T19:34:11-05:00",
+    "subject": "Merge pull request #140 from 2witstudios/pu/azc-adr",
+    "files": 8,
+    "additions": 824,
+    "deletions": 24,
+    "binary": 0
+  },
+  {
+    "pr": 133,
+    "sha": "5b9269c32bd7b250b237859fafd4295f950a1064",
+    "date": "2026-09-29T19:22:10-05:00",
+    "subject": "Merge pull request #133 from 2witstudios/pu/auth-probe-degraded",
+    "files": 20,
+    "additions": 1415,
+    "deletions": 122,
+    "binary": 0
+  },
+  {
+    "pr": 137,
+    "sha": "7fa6d1094c1a3b4204763a0164ebc60cb4e8964f",
+    "date": "2026-09-29T18:50:31-05:00",
+    "subject": "Merge pull request #137 from 2witstudios/pu/auth-start-guard-ast",
+    "files": 5,
+    "additions": 971,
+    "deletions": 185,
+    "binary": 0
+  },
+  {
+    "pr": 135,
+    "sha": "971128ed87a5ffcce75ca4517eff329735fede01",
+    "date": "2026-09-29T18:01:33-05:00",
+    "subject": "Merge pull request #135 from 2witstudios/pu/auth-ceilings-teardown",
+    "files": 8,
+    "additions": 202,
+    "deletions": 89,
+    "binary": 0
+  },
+  {
+    "pr": 136,
+    "sha": "75a90e9888c12948ce0657aa5092ae578f0a67b1",
+    "date": "2026-09-29T17:21:09-05:00",
+    "subject": "Merge pull request #136 from 2witstudios/pu/auth-start-guard",
+    "files": 3,
+    "additions": 180,
+    "deletions": 59,
+    "binary": 0
+  },
+  {
+    "pr": 131,
+    "sha": "aeae21fd2af331503799e43b701605d3ad84e9ce",
+    "date": "2026-09-29T16:54:52-05:00",
+    "subject": "Merge pull request #131 from 2witstudios/pu/issue-196-probe-noise",
+    "files": 3,
+    "additions": 90,
+    "deletions": 5,
+    "binary": 0
+  },
+  {
+    "pr": 130,
+    "sha": "365acdcf33ef4c9e3e6ed52cc1f723e74b7eb363",
+    "date": "2026-09-29T16:12:55-05:00",
+    "subject": "Merge pull request #130 from 2witstudios/pu/auth-staging-always-on",
+    "files": 22,
+    "additions": 816,
+    "deletions": 184,
+    "binary": 0
+  },
+  {
+    "pr": 132,
+    "sha": "1954cd49b399be05987f57ab2f8d413ddb52c089",
+    "date": "2026-09-29T15:14:53-05:00",
+    "subject": "Merge pull request #132 from 2witstudios/pu/auth-duration-histogram",
+    "files": 18,
+    "additions": 982,
+    "deletions": 200,
+    "binary": 0
+  },
+  {
+    "pr": 128,
+    "sha": "45b1c74f3b6c2c10479ed6e756c02de4bb18df0e",
+    "date": "2026-09-29T14:59:26-05:00",
+    "subject": "Merge pull request #128 from 2witstudios/pu/auth-session-revoke",
+    "files": 2,
+    "additions": 69,
+    "deletions": 28,
+    "binary": 0
+  },
+  {
+    "pr": 129,
+    "sha": "2259b8a730aec2acd4972dd855a031de5bf24098",
+    "date": "2026-09-29T13:31:38-05:00",
+    "subject": "Merge pull request #129 from 2witstudios/pu/auth-ceiling-enumeration",
+    "files": 11,
+    "additions": 580,
+    "deletions": 156,
+    "binary": 0
+  },
+  {
+    "pr": 127,
+    "sha": "fe33b2ff62839706f0187ea3b958c264020a84b8",
+    "date": "2026-09-29T12:13:57-05:00",
+    "subject": "Merge pull request #127 from 2witstudios/pu/auth-alert-counters",
+    "files": 8,
+    "additions": 230,
+    "deletions": 28,
+    "binary": 0
+  },
+  {
+    "pr": 126,
+    "sha": "0acfbccf2c2ae6a9b7f9f929671e0138f105e6d3",
+    "date": "2026-09-29T10:52:31-05:00",
+    "subject": "Merge pull request #126 from 2witstudios/pu/issue-181-no-cap",
+    "files": 14,
+    "additions": 129,
+    "deletions": 512,
+    "binary": 0
+  },
+  {
+    "pr": 122,
+    "sha": "cde701464339d051cdf57c95188c6ea8d5312a55",
+    "date": "2026-09-29T08:05:27-05:00",
+    "subject": "Merge pull request #122 from 2witstudios/pu/auth-ops-fixes",
+    "files": 41,
+    "additions": 1887,
+    "deletions": 232,
+    "binary": 0
+  },
+  {
+    "pr": 124,
+    "sha": "9933e78015d00beffc850fea788498cd75fb6a0b",
+    "date": "2026-09-28T22:27:59-05:00",
+    "subject": "Merge pull request #124 from 2witstudios/pu/auth-proof-fixes",
+    "files": 64,
+    "additions": 2004,
+    "deletions": 733,
+    "binary": 0
+  },
+  {
+    "pr": 125,
+    "sha": "b1ed96354454abbdaf79741b0648605ac5745ae8",
+    "date": "2026-09-28T13:20:34-05:00",
+    "subject": "Merge pull request #125 from 2witstudios/pu/agent-cap-config",
+    "files": 7,
+    "additions": 295,
+    "deletions": 47,
+    "binary": 0
+  },
+  {
+    "pr": 123,
+    "sha": "0527d09cf24e032d7a34b500a66d835d78f73b1d",
+    "date": "2026-09-28T08:49:22-05:00",
+    "subject": "Merge pull request #123 from 2witstudios/pu/branding",
+    "files": 122,
+    "additions": 308,
+    "deletions": 289,
+    "binary": 60
+  },
+  {
+    "pr": 121,
+    "sha": "92732946455f91b16acea2fe723ca87d808a44db",
+    "date": "2026-09-28T06:03:16-05:00",
+    "subject": "Merge pull request #121 from 2witstudios/pu/brand-foundation",
+    "files": 122,
+    "additions": 2721,
+    "deletions": 491,
+    "binary": 60
+  },
+  {
+    "pr": 120,
+    "sha": "720b68657173b6ad1e96e66f128c97651b53519b",
+    "date": "2026-09-28T00:02:51-05:00",
+    "subject": "Merge pull request #120 from 2witstudios/pu/auth-4-7-confirm",
+    "files": 77,
+    "additions": 1792,
+    "deletions": 277,
+    "binary": 38
+  },
+  {
+    "pr": 119,
+    "sha": "9e1d63298ae01dee6dead0adf97c9330b297acc4",
+    "date": "2026-09-27T14:30:26-05:00",
+    "subject": "Merge pull request #119 from 2witstudios/pu/auth-cleanup",
+    "files": 44,
+    "additions": 1309,
+    "deletions": 254,
+    "binary": 0
+  },
+  {
+    "pr": 118,
+    "sha": "013d072ec4f58077349f5afe1f9a47770fe4512f",
+    "date": "2026-09-27T07:28:14-05:00",
+    "subject": "Merge pull request #118 from 2witstudios/pu/auth-7-6-rehearsal",
+    "files": 25,
+    "additions": 2278,
+    "deletions": 51,
+    "binary": 0
+  },
+  {
+    "pr": 117,
+    "sha": "0d0cac67e8ece7df6b62bd300991962379319e2b",
+    "date": "2026-09-25T23:03:52-05:00",
+    "subject": "Merge pull request #117 from 2witstudios/pu/issue-138-awk",
+    "files": 6,
+    "additions": 487,
+    "deletions": 55,
+    "binary": 0
+  },
+  {
+    "pr": 116,
+    "sha": "49966a6ebd3f2ec58c05e00f2684fa5ef10170af",
+    "date": "2026-09-25T21:53:44-05:00",
+    "subject": "Merge pull request #116 from 2witstudios/pu/issue-137-no-review-limit",
+    "files": 4,
+    "additions": 11,
+    "deletions": 7,
+    "binary": 0
+  },
+  {
+    "pr": 114,
+    "sha": "c2102aeb9b67ffd90bf25d1c51f9041497b938d3",
+    "date": "2026-09-25T21:43:04-05:00",
+    "subject": "Merge pull request #114 from 2witstudios/pu/priv-adr-amend",
+    "files": 4,
+    "additions": 56,
+    "deletions": 24,
+    "binary": 0
+  },
+  {
+    "pr": 115,
+    "sha": "dd35e624c35722a126c09083dbd9a742914fcb44",
+    "date": "2026-09-25T20:50:03-05:00",
+    "subject": "Merge pull request #115 from 2witstudios/pu/issue-136-reviewer-cap",
+    "files": 8,
+    "additions": 92,
+    "deletions": 49,
+    "binary": 0
+  },
+  {
+    "pr": 113,
+    "sha": "ed7f7e0fc1761a4baf6877b8f60fab0767b7ae54",
+    "date": "2026-09-25T20:26:29-05:00",
+    "subject": "Merge pull request #113 from 2witstudios/pu/issue-129-guard-parse",
+    "files": 8,
+    "additions": 801,
+    "deletions": 14,
+    "binary": 0
+  },
+  {
+    "pr": 112,
+    "sha": "b9f958665675b02f2561c8d72c5caeea4ee76481",
+    "date": "2026-09-25T19:23:31-05:00",
+    "subject": "Merge pull request #112 from 2witstudios/pu/issue-126-no-admin",
+    "files": 9,
+    "additions": 4382,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 111,
+    "sha": "507bbab36194795a5faa3ce53e63f92ab6705d92",
+    "date": "2026-09-25T19:07:34-05:00",
+    "subject": "Merge pull request #111 from 2witstudios/pu/issue-127-rules",
+    "files": 7,
+    "additions": 54,
+    "deletions": 42,
+    "binary": 0
+  },
+  {
+    "pr": 110,
+    "sha": "27be436974a1637181e1c825e54fb083b2cfb2e7",
+    "date": "2026-09-25T19:07:16-05:00",
+    "subject": "Merge pull request #110 from 2witstudios/pu/auth-7-7-alerts",
+    "files": 37,
+    "additions": 2665,
+    "deletions": 47,
+    "binary": 0
+  },
+  {
+    "pr": 109,
+    "sha": "00c24ab85f68bf89ca9afb574380b768caa998bf",
+    "date": "2026-09-25T18:09:21-05:00",
+    "subject": "Merge pull request #109 from 2witstudios/pu/auth-7-8-security",
+    "files": 6,
+    "additions": 657,
+    "deletions": 3,
+    "binary": 0
+  },
+  {
+    "pr": 108,
+    "sha": "05246d4817bbf9900ded719d5ff09ce2d78c5ab4",
+    "date": "2026-09-25T17:03:03-05:00",
+    "subject": "Merge pull request #108 from 2witstudios/pu/auth-6-7-load",
+    "files": 23,
+    "additions": 1935,
+    "deletions": 113,
+    "binary": 0
+  },
+  {
+    "pr": 107,
+    "sha": "eac00e4d33d7a75c540835249c42232eb33fdb74",
+    "date": "2026-09-25T15:35:25-05:00",
+    "subject": "Merge pull request #107 from 2witstudios/pu/auth-7-5-7-9",
+    "files": 17,
+    "additions": 4803,
+    "deletions": 216,
+    "binary": 0
+  },
+  {
+    "pr": 106,
+    "sha": "300009b769cd9c7b73dfbe8dcafde05d01e18460",
+    "date": "2026-09-25T13:39:12-05:00",
+    "subject": "Merge pull request #106 from 2witstudios/pu/auth-6-3-1-controls",
+    "files": 6,
+    "additions": 248,
+    "deletions": 50,
+    "binary": 0
+  },
+  {
+    "pr": 105,
+    "sha": "c7477f32530357a078720221b511b2747537bfdd",
+    "date": "2026-09-25T13:18:56-05:00",
+    "subject": "Merge pull request #105 from 2witstudios/pu/auth-4-6-origin-null",
+    "files": 9,
+    "additions": 170,
+    "deletions": 34,
+    "binary": 0
+  },
+  {
+    "pr": 104,
+    "sha": "a76a749dc8662da9505c377497fee8d450072de5",
+    "date": "2026-09-25T10:38:57-05:00",
+    "subject": "Merge pull request #104 from 2witstudios/pu/issue-122-review-check",
+    "files": 16,
+    "additions": 680,
+    "deletions": 206,
+    "binary": 0
+  },
+  {
+    "pr": 103,
+    "sha": "beb07749689c8194b9d39a0d27f5c55dc218ee71",
+    "date": "2026-09-25T05:28:43-05:00",
+    "subject": "Merge pull request #103 from 2witstudios/pu/issue-75-decline-buttons",
+    "files": 9,
+    "additions": 157,
+    "deletions": 67,
+    "binary": 0
+  },
+  {
+    "pr": 102,
+    "sha": "2f4e51fc9dbcb1b75cd8b7240c940b5b24da5564",
+    "date": "2026-09-25T00:06:03-05:00",
+    "subject": "Merge pull request #102 from 2witstudios/pu/passkey-focus-enumeration",
+    "files": 23,
+    "additions": 866,
+    "deletions": 157,
+    "binary": 0
+  },
+  {
+    "pr": 98,
+    "sha": "a501515ec193f4938068d7ca3ed89a309cc1e1c4",
+    "date": "2026-09-24T22:43:32-05:00",
+    "subject": "Merge pull request #98 from 2witstudios/dependabot/github_actions/actions/create-github-app-token-3.2.0",
+    "files": 1,
+    "additions": 1,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 97,
+    "sha": "a1c6043a85bfa5e4061cf9d9ebe1c4943635dbde",
+    "date": "2026-09-24T22:43:18-05:00",
+    "subject": "Merge pull request #97 from 2witstudios/dependabot/github_actions/actions/upload-artifact-7.0.1",
+    "files": 1,
+    "additions": 1,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 101,
+    "sha": "c0f532f4c9a9d04da982bd5f983e4a91868c2d37",
+    "date": "2026-09-24T22:28:56-05:00",
+    "subject": "Merge pull request #101 from 2witstudios/pu/form-ux-followups",
+    "files": 36,
+    "additions": 862,
+    "deletions": 233,
+    "binary": 0
+  },
+  {
+    "pr": 100,
+    "sha": "6cdf95a4cdaeeb24539625dc7eab1333aa7ec107",
+    "date": "2026-09-24T21:29:41-05:00",
+    "subject": "Merge pull request #100 from 2witstudios/pu/deploy-migration-safety",
+    "files": 27,
+    "additions": 1163,
+    "deletions": 235,
+    "binary": 0
+  },
+  {
+    "pr": 99,
+    "sha": "513c2e9ef945f30eca471e608732de5ae991b953",
+    "date": "2026-09-24T21:24:43-05:00",
+    "subject": "Merge pull request #99 from 2witstudios/pu/email-change-followups",
+    "files": 24,
+    "additions": 641,
+    "deletions": 93,
+    "binary": 0
+  },
+  {
+    "pr": 93,
+    "sha": "cbdb61ce8364d2c03710937dfcf5a9b7d293dbb1",
+    "date": "2026-09-24T21:13:18-05:00",
+    "subject": "Merge pull request #93 from 2witstudios/pu/web-bugs-ci-flakes",
+    "files": 25,
+    "additions": 462,
+    "deletions": 74,
+    "binary": 0
+  },
+  {
+    "pr": 94,
+    "sha": "5a623b4a00347f63b11fc2e3a7defffac6901aa5",
+    "date": "2026-09-24T20:05:40-05:00",
+    "subject": "Merge pull request #94 from 2witstudios/pu/ci-deploy-hardening",
+    "files": 33,
+    "additions": 1210,
+    "deletions": 60,
+    "binary": 0
+  },
+  {
+    "pr": 96,
+    "sha": "698fd20e6e394a230f0b59ad742cfc64c8a24b58",
+    "date": "2026-09-24T20:00:19-05:00",
+    "subject": "Merge pull request #96 from 2witstudios/pu/integration-reliability",
+    "files": 14,
+    "additions": 279,
+    "deletions": 55,
+    "binary": 0
+  },
+  {
+    "pr": 95,
+    "sha": "1a0580c993552feb079c42230d7de45a356c9542",
+    "date": "2026-09-24T19:59:59-05:00",
+    "subject": "Merge pull request #95 from 2witstudios/pu/auth-followups",
+    "files": 35,
+    "additions": 1232,
+    "deletions": 212,
+    "binary": 0
+  },
+  {
+    "pr": 92,
+    "sha": "bd7c9c7418ef035fb73e18c1916ae27476effce7",
+    "date": "2026-09-24T17:36:06-05:00",
+    "subject": "Merge pull request #92 from 2witstudios/pu/issue-2-emailed-links",
+    "files": 32,
+    "additions": 1013,
+    "deletions": 266,
+    "binary": 0
+  },
+  {
+    "pr": 91,
+    "sha": "fba6b64ba7a3be76ad2fe75eeddc52f3bae6f730",
+    "date": "2026-09-24T16:28:08-05:00",
+    "subject": "Merge pull request #91 from 2witstudios/pu/forms-without-js",
+    "files": 70,
+    "additions": 1470,
+    "deletions": 520,
+    "binary": 12
+  },
+  {
+    "pr": 88,
+    "sha": "bcc817eaa2453d5ec9a013a90e733cc77e1ee8d2",
+    "date": "2026-09-24T16:27:53-05:00",
+    "subject": "Merge pull request #88 from 2witstudios/pu/rt-2-6a",
+    "files": 18,
+    "additions": 1811,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 90,
+    "sha": "3b1ff91f9a8fbf6e9f936438d8a6b110d1a68e33",
+    "date": "2026-09-24T11:15:27-05:00",
+    "subject": "Merge pull request #90 from 2witstudios/pu/rt-2-3b",
+    "files": 39,
+    "additions": 2073,
+    "deletions": 278,
+    "binary": 0
+  },
+  {
+    "pr": 89,
+    "sha": "26fccebe6b71f7b56cbd9e68e54e29fc0210c9c3",
+    "date": "2026-09-24T06:19:17-05:00",
+    "subject": "Merge pull request #89 from 2witstudios/pu/rt-2-4a",
+    "files": 15,
+    "additions": 1118,
+    "deletions": 24,
+    "binary": 0
+  },
+  {
+    "pr": 87,
+    "sha": "f7e16e0dc84afee46a1d772bad4ea203c3bc53f0",
+    "date": "2026-09-24T06:08:28-05:00",
+    "subject": "Merge pull request #87 from 2witstudios/pu/issue-11-test-infra",
+    "files": 172,
+    "additions": 4666,
+    "deletions": 4488,
+    "binary": 0
+  },
+  {
+    "pr": 86,
+    "sha": "fe07899aec9283ccfd268aa810200558aa723f2b",
+    "date": "2026-09-23T20:10:42-05:00",
+    "subject": "Merge pull request #86 from 2witstudios/pu/issue-31-audit-exceptions",
+    "files": 13,
+    "additions": 618,
+    "deletions": 32,
+    "binary": 0
+  },
+  {
+    "pr": 82,
+    "sha": "e6bb602f8502eb276dab14d27221a2b10da421db",
+    "date": "2026-09-23T19:45:47-05:00",
+    "subject": "Merge pull request #82 from 2witstudios/pu/issue-5b-auth-round2",
+    "files": 54,
+    "additions": 1545,
+    "deletions": 633,
+    "binary": 0
+  },
+  {
+    "pr": 85,
+    "sha": "083af645002f9e160bf3039763c0d080e81caedb",
+    "date": "2026-09-23T19:30:54-05:00",
+    "subject": "Merge pull request #85 from 2witstudios/fix/issue-9-followups",
+    "files": 7,
+    "additions": 131,
+    "deletions": 102,
+    "binary": 0
+  },
+  {
+    "pr": 81,
+    "sha": "230a00ae93fbe2c55644585b9fe3104d0febe9fc",
+    "date": "2026-09-23T19:30:22-05:00",
+    "subject": "Merge pull request #81 from 2witstudios/pu/issue-8b-db-correctness",
+    "files": 55,
+    "additions": 6234,
+    "deletions": 1620,
+    "binary": 0
+  },
+  {
+    "pr": 80,
+    "sha": "1306affc11b9d714753b9e4608354f3952bf31a6",
+    "date": "2026-09-23T19:14:10-05:00",
+    "subject": "Merge pull request #80 from 2witstudios/pu/issue-51-staging-gate",
+    "files": 5,
+    "additions": 501,
+    "deletions": 18,
+    "binary": 0
+  },
+  {
+    "pr": 84,
+    "sha": "6d49fa79a78454c6c17742383e5fd338dfed4371",
+    "date": "2026-09-23T18:46:16-05:00",
+    "subject": "Merge pull request #84 from 2witstudios/pu/issue-9-protocol-owner",
+    "files": 77,
+    "additions": 1020,
+    "deletions": 1268,
+    "binary": 0
+  },
+  {
+    "pr": 83,
+    "sha": "93d075aacb54e0f71fc9e67769fa1e3d13656d1e",
+    "date": "2026-09-23T18:45:52-05:00",
+    "subject": "Merge pull request #83 from 2witstudios/pu/e2e-journey-reliability",
+    "files": 28,
+    "additions": 960,
+    "deletions": 481,
+    "binary": 0
+  },
+  {
+    "pr": 79,
+    "sha": "f7dd46c92c3667515f0a72c728fcc57ed42f7a09",
+    "date": "2026-09-23T16:28:47-05:00",
+    "subject": "Merge pull request #79 from 2witstudios/pu/issue-7-composition-root",
+    "files": 113,
+    "additions": 2794,
+    "deletions": 1797,
+    "binary": 0
+  },
+  {
+    "pr": 77,
+    "sha": "039690e0583585ca3a878b4ef5ff9486f80294ab",
+    "date": "2026-09-23T16:28:09-05:00",
+    "subject": "Merge pull request #77 from 2witstudios/pu/priv-decisions",
+    "files": 9,
+    "additions": 602,
+    "deletions": 23,
+    "binary": 0
+  },
+  {
+    "pr": 78,
+    "sha": "abbf45e2ced65e2a2c43299966744554cf944c76",
+    "date": "2026-09-23T15:50:42-05:00",
+    "subject": "Merge pull request #78 from 2witstudios/pu/issue-6-drizzle-baseline",
+    "files": 110,
+    "additions": 7528,
+    "deletions": 10875,
+    "binary": 0
+  },
+  {
+    "pr": 76,
+    "sha": "7e2dff71d53d46b055be5a0d29a06c6f436711a2",
+    "date": "2026-09-23T13:45:59-05:00",
+    "subject": "Merge pull request #76 from 2witstudios/pu/passkey",
+    "files": 4,
+    "additions": 40,
+    "deletions": 12,
+    "binary": 0
+  },
+  {
+    "pr": 71,
+    "sha": "b8a41d697b8b7df8775dff3a6136274a7b370817",
+    "date": "2026-09-23T13:26:09-05:00",
+    "subject": "Merge pull request #71 from 2witstudios/pu/issue-13-docs-true",
+    "files": 15,
+    "additions": 164,
+    "deletions": 179,
+    "binary": 0
+  },
+  {
+    "pr": 75,
+    "sha": "f5e5b89c8f6ab18fde56c07c0e4c5fea9fa7ae8c",
+    "date": "2026-09-23T12:56:29-05:00",
+    "subject": "Merge pull request #75 from 2witstudios/pu/issue-5-auth-hardening",
+    "files": 75,
+    "additions": 2223,
+    "deletions": 1144,
+    "binary": 0
+  },
+  {
+    "pr": 73,
+    "sha": "87bdb47733008c037e65cd5359f4a25c93eabb3c",
+    "date": "2026-09-23T12:30:46-05:00",
+    "subject": "Merge pull request #73 from 2witstudios/pu/issue-8c-redis-presence",
+    "files": 20,
+    "additions": 929,
+    "deletions": 559,
+    "binary": 0
+  },
+  {
+    "pr": 72,
+    "sha": "b46f2c99a80c2e7a648d567de95471e0bd4b110a",
+    "date": "2026-09-23T12:22:49-05:00",
+    "subject": "Merge pull request #72 from 2witstudios/pu/issue-8-db-surface",
+    "files": 16,
+    "additions": 547,
+    "deletions": 436,
+    "binary": 0
+  },
+  {
+    "pr": 74,
+    "sha": "86bfcf7c442cbfd0a5bf42b69fbacf2a01c8c2ed",
+    "date": "2026-09-23T12:02:22-05:00",
+    "subject": "Merge pull request #74 from 2witstudios/pu/grd-6-12-merge-followup",
+    "files": 8,
+    "additions": 306,
+    "deletions": 17,
+    "binary": 0
+  },
+  {
+    "pr": 70,
+    "sha": "6cbed21ff9656182dec43dcba233b085ac5072f9",
+    "date": "2026-09-23T10:24:09-05:00",
+    "subject": "Merge pull request #70 from 2witstudios/pu/grd-6-1-5-rules-review",
+    "files": 99,
+    "additions": 11764,
+    "deletions": 262,
+    "binary": 0
+  },
+  {
+    "pr": 66,
+    "sha": "557518807692e5e9ed6adc2ee6c74b214e2eef70",
+    "date": "2026-09-23T08:46:15-05:00",
+    "subject": "Merge pull request #66 from 2witstudios/pu/rt-2-2f-r2",
+    "files": 7,
+    "additions": 349,
+    "deletions": 55,
+    "binary": 0
+  },
+  {
+    "pr": 67,
+    "sha": "a1b7a064ca2131f3a1763139b282f4fb1b3f53e4",
+    "date": "2026-09-23T08:45:48-05:00",
+    "subject": "Merge pull request #67 from 2witstudios/pu/issue-3-auth-get",
+    "files": 28,
+    "additions": 724,
+    "deletions": 255,
+    "binary": 0
+  },
+  {
+    "pr": 69,
+    "sha": "81040141e858448e0934489f7366258677af11a4",
+    "date": "2026-09-23T07:35:02-05:00",
+    "subject": "Merge pull request #69 from 2witstudios/pu/issue-10-web-shell",
+    "files": 92,
+    "additions": 919,
+    "deletions": 711,
+    "binary": 12
+  },
+  {
+    "pr": 68,
+    "sha": "363f4254a247344eb2f5b8dc0cd0bb1ab937883d",
+    "date": "2026-09-23T07:24:28-05:00",
+    "subject": "Merge pull request #68 from 2witstudios/pu/issue-4-jsonb",
+    "files": 11,
+    "additions": 153,
+    "deletions": 47,
+    "binary": 0
+  },
+  {
+    "pr": 52,
+    "sha": "62d88aee5cfa5014eaf82d280523a81accd90e37",
+    "date": "2026-09-23T07:24:15-05:00",
+    "subject": "Merge pull request #52 from 2witstudios/pu/rt-2-3a",
+    "files": 41,
+    "additions": 1850,
+    "deletions": 114,
+    "binary": 0
+  },
+  {
+    "pr": 51,
+    "sha": "f863583ce5156657231634acb488d469d84a7f2c",
+    "date": "2026-09-23T07:22:56-05:00",
+    "subject": "Merge pull request #51 from 2witstudios/pu/rt-3-1f",
+    "files": 5,
+    "additions": 128,
+    "deletions": 60,
+    "binary": 0
+  },
+  {
+    "pr": 57,
+    "sha": "44fced3a9155ebd23fa41e5b296bb5074943a358",
+    "date": "2026-09-23T07:22:30-05:00",
+    "subject": "Merge pull request #57 from 2witstudios/pu/passkey-bug",
+    "files": 22,
+    "additions": 1143,
+    "deletions": 54,
+    "binary": 0
+  },
+  {
+    "pr": 59,
+    "sha": "bb32eb9a5c0a067dc58672972cd36ac21f1c1185",
+    "date": "2026-09-23T07:22:09-05:00",
+    "subject": "Merge pull request #59 from 2witstudios/pu/grd-6-1-1-guard",
+    "files": 14,
+    "additions": 2490,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 56,
+    "sha": "cbe8327759178011da480903ae06352728055823",
+    "date": "2026-09-22T23:32:18-05:00",
+    "subject": "Merge pull request #56 from 2witstudios/pu/rt-2-2f",
+    "files": 9,
+    "additions": 404,
+    "deletions": 2553,
+    "binary": 0
+  },
+  {
+    "pr": 54,
+    "sha": "33cc02f65fdbf83701ad489511be6a020238fe8a",
+    "date": "2026-09-22T23:09:51-05:00",
+    "subject": "Merge pull request #54 from 2witstudios/pu/rt-3-1g",
+    "files": 1,
+    "additions": 50,
+    "deletions": 13,
+    "binary": 0
+  },
+  {
+    "pr": 53,
+    "sha": "929b2ae126ad8fe116474c47cd1b45abc9870b9a",
+    "date": "2026-09-22T23:06:36-05:00",
+    "subject": "Merge pull request #53 from 2witstudios/pu/rt-2-1c",
+    "files": 13,
+    "additions": 721,
+    "deletions": 154,
+    "binary": 0
+  },
+  {
+    "pr": 50,
+    "sha": "82bcc0a5539ce2425296a8fc4f6743bf48ad75d0",
+    "date": "2026-09-22T23:04:59-05:00",
+    "subject": "Merge pull request #50 from 2witstudios/pu/par-2-slots",
+    "files": 34,
+    "additions": 2594,
+    "deletions": 240,
+    "binary": 0
+  },
+  {
+    "pr": 47,
+    "sha": "235b1299f14328276a3b9719195058267367ba46",
+    "date": "2026-09-22T21:53:48-05:00",
+    "subject": "Merge pull request #47 from 2witstudios/pu/auth-stage6-evidence",
+    "files": 39,
+    "additions": 2513,
+    "deletions": 130,
+    "binary": 2
+  },
+  {
+    "pr": 55,
+    "sha": "1ff4ea8be9e92df14a26a25253f5950385004db5",
+    "date": "2026-09-22T21:44:08-05:00",
+    "subject": "Merge pull request #55 from 2witstudios/docs/issues-list",
+    "files": 3,
+    "additions": 35,
+    "deletions": 3,
+    "binary": 0
+  },
+  {
+    "pr": 49,
+    "sha": "6984d243d9dc62cecd58bab6b87a4ad245b24da5",
+    "date": "2026-09-22T21:32:51-05:00",
+    "subject": "Merge pull request #49 from 2witstudios/pu/actor-1",
+    "files": 25,
+    "additions": 434,
+    "deletions": 81,
+    "binary": 0
+  },
+  {
+    "pr": 46,
+    "sha": "85150993110b2a166a3550ebe74defb8bbc2149b",
+    "date": "2026-09-22T21:32:05-05:00",
+    "subject": "Merge pull request #46 from 2witstudios/build/staging-cd",
+    "files": 3,
+    "additions": 145,
+    "deletions": 36,
+    "binary": 0
+  },
+  {
+    "pr": 48,
+    "sha": "adf25919612f6a08d0a6e9737eeab123013988f6",
+    "date": "2026-09-22T20:05:28-05:00",
+    "subject": "Merge pull request #48 from 2witstudios/pu/rt-1-4",
+    "files": 2,
+    "additions": 24,
+    "deletions": 16,
+    "binary": 0
+  },
+  {
+    "pr": 45,
+    "sha": "457bd329ee9232bc739ed8abbc90fb8603357eeb",
+    "date": "2026-09-22T20:04:32-05:00",
+    "subject": "Merge pull request #45 from 2witstudios/pu/rt-2-1b",
+    "files": 11,
+    "additions": 557,
+    "deletions": 212,
+    "binary": 0
+  },
+  {
+    "pr": 44,
+    "sha": "9644b0e527b70cb4744db14b23660967cc9ae326",
+    "date": "2026-09-22T20:04:04-05:00",
+    "subject": "Merge pull request #44 from 2witstudios/pu/rt-2-2",
+    "files": 49,
+    "additions": 9825,
+    "deletions": 288,
+    "binary": 0
+  },
+  {
+    "pr": 43,
+    "sha": "4393f7349010ce898de15b5e8caa2287618e8efe",
+    "date": "2026-09-22T18:30:05-05:00",
+    "subject": "Merge pull request #43 from 2witstudios/pu/rt-3-1",
+    "files": 11,
+    "additions": 1177,
+    "deletions": 68,
+    "binary": 0
+  },
+  {
+    "pr": 40,
+    "sha": "93842e448b66b408e28ad0743d8b5a9fb1b0cb75",
+    "date": "2026-09-22T18:29:45-05:00",
+    "subject": "Merge pull request #40 from 2witstudios/pu/rt-2-1",
+    "files": 11,
+    "additions": 1280,
+    "deletions": 36,
+    "binary": 0
+  },
+  {
+    "pr": 42,
+    "sha": "919399b24f03c26e417d8e5b901c98eea788c6bb",
+    "date": "2026-09-22T18:29:25-05:00",
+    "subject": "Merge pull request #42 from 2witstudios/pu/auth-stage5-findings",
+    "files": 14,
+    "additions": 482,
+    "deletions": 88,
+    "binary": 0
+  },
+  {
+    "pr": 41,
+    "sha": "30723c463e7a6d0c338aa87f85193f35aa31292f",
+    "date": "2026-09-22T18:29:07-05:00",
+    "subject": "Merge pull request #41 from 2witstudios/pu/rt-1-3",
+    "files": 2,
+    "additions": 488,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 38,
+    "sha": "336a6570f85cf3335b105e96ad008688894ed3cd",
+    "date": "2026-09-22T18:26:29-05:00",
+    "subject": "Merge pull request #38 from 2witstudios/pu/rt-1-2",
+    "files": 4,
+    "additions": 363,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 39,
+    "sha": "b127f4664ad8d773b5a6c97e093049fcbe59d2e1",
+    "date": "2026-09-22T18:26:07-05:00",
+    "subject": "Merge pull request #39 from 2witstudios/pu/rt-1-1",
+    "files": 2,
+    "additions": 333,
+    "deletions": 14,
+    "binary": 0
+  },
+  {
+    "pr": 37,
+    "sha": "23f3f2936fe6a63cc2d3abba6bee8c937b0f2434",
+    "date": "2026-09-22T18:25:45-05:00",
+    "subject": "Merge pull request #37 from 2witstudios/pu/auth-fly-staging",
+    "files": 9,
+    "additions": 808,
+    "deletions": 45,
+    "binary": 0
+  },
+  {
+    "pr": 36,
+    "sha": "b3dcfd75397671ca902d2c7b3f7912074eafe38d",
+    "date": "2026-09-22T12:05:17-05:00",
+    "subject": "Merge pull request #36 from 2witstudios/pu/auth-stage5-passkeys",
+    "files": 49,
+    "additions": 3250,
+    "deletions": 147,
+    "binary": 6
+  },
+  {
+    "pr": 35,
+    "sha": "e207efff3a73fc0c09d41376f95c60dfe48a062a",
+    "date": "2026-09-22T09:51:39-05:00",
+    "subject": "Merge pull request #35 from 2witstudios/pu/auth-email-templates",
+    "files": 18,
+    "additions": 1119,
+    "deletions": 6,
+    "binary": 0
+  },
+  {
+    "pr": 34,
+    "sha": "f8918c0676de720ef3baa4df368e9cce910d2bb5",
+    "date": "2026-09-22T08:19:27-05:00",
+    "subject": "Merge pull request #34 from 2witstudios/pu/lobby-rules",
+    "files": 22,
+    "additions": 791,
+    "deletions": 169,
+    "binary": 0
+  },
+  {
+    "pr": 33,
+    "sha": "0da3e54b161c8dd0b142bd1dada5d63cfc17ff6a",
+    "date": "2026-09-22T07:59:45-05:00",
+    "subject": "Merge pull request #33 from 2witstudios/pu/auth-stage4-signin",
+    "files": 107,
+    "additions": 4276,
+    "deletions": 603,
+    "binary": 6
+  },
+  {
+    "pr": 32,
+    "sha": "889d230a6a785ac645d9e76d5ec55cf319844863",
+    "date": "2026-09-21T22:05:42-05:00",
+    "subject": "Merge pull request #32 from 2witstudios/pu/schema-foundation",
+    "files": 50,
+    "additions": 5429,
+    "deletions": 156,
+    "binary": 0
+  },
+  {
+    "pr": 31,
+    "sha": "32d60b944c66f316e8a8be0d2b43d5579c13cc38",
+    "date": "2026-09-21T21:08:03-05:00",
+    "subject": "Merge pull request #31 from 2witstudios/pu/auth-stage3-minors",
+    "files": 6,
+    "additions": 191,
+    "deletions": 31,
+    "binary": 0
+  },
+  {
+    "pr": 30,
+    "sha": "b34732ceb46c4efc8199b6e42d7093b2824427c9",
+    "date": "2026-09-21T17:54:30-05:00",
+    "subject": "Merge pull request #30 from 2witstudios/pu/login-ui",
+    "files": 37,
+    "additions": 2414,
+    "deletions": 29,
+    "binary": 0
+  },
+  {
+    "pr": 29,
+    "sha": "130453d2505b646d535bf1a479c5b726b3f3d135",
+    "date": "2026-09-21T17:35:32-05:00",
+    "subject": "Merge pull request #29 from 2witstudios/fix/docs-consult-review",
+    "files": 10,
+    "additions": 867,
+    "deletions": 222,
+    "binary": 0
+  },
+  {
+    "pr": 28,
+    "sha": "b58287612bfc275c6415f18bb4f9e86c450171f1",
+    "date": "2026-09-21T09:09:26-05:00",
+    "subject": "Merge pull request #28 from 2witstudios/pu/tailwind-v4",
+    "files": 134,
+    "additions": 1990,
+    "deletions": 1935,
+    "binary": 12
+  },
+  {
+    "pr": 25,
+    "sha": "dbf9ec52904b23712a1b8731c8ee2e6d049606aa",
+    "date": "2026-09-21T07:49:27-05:00",
+    "subject": "Merge pull request #25 from 2witstudios/pu/docs-followup",
+    "files": 25,
+    "additions": 2038,
+    "deletions": 374,
+    "binary": 0
+  },
+  {
+    "pr": 27,
+    "sha": "24fdc715be940cb42947ea529c49001d9e885099",
+    "date": "2026-09-21T07:29:01-05:00",
+    "subject": "Merge pull request #27 from 2witstudios/pu/darklioght-mode",
+    "files": 34,
+    "additions": 1527,
+    "deletions": 266,
+    "binary": 0
+  },
+  {
+    "pr": 26,
+    "sha": "ee7959911f9bd514a5952a547f1e2464c2e140f6",
+    "date": "2026-09-21T07:24:50-05:00",
+    "subject": "Merge pull request #26 from 2witstudios/fix/auth-verification-retention",
+    "files": 14,
+    "additions": 895,
+    "deletions": 5,
+    "binary": 0
+  },
+  {
+    "pr": 17,
+    "sha": "79e842ed99259d7a4a63c212773a5c88d02e9868",
+    "date": "2026-09-21T05:52:26-05:00",
+    "subject": "Merge pull request #17 from 2witstudios/pu/auth-passwordless-api",
+    "files": 74,
+    "additions": 6645,
+    "deletions": 78,
+    "binary": 0
+  },
+  {
+    "pr": 24,
+    "sha": "73c048e8a2bdf790be1662bfd98ad2b0e047be86",
+    "date": "2026-09-21T05:51:34-05:00",
+    "subject": "Merge pull request #24 from 2witstudios/pu/docs",
+    "files": 19,
+    "additions": 1440,
+    "deletions": 189,
+    "binary": 0
+  },
+  {
+    "pr": 23,
+    "sha": "b95c9aa7f97e72a230da7a23592cdaa1fcd4e1cc",
+    "date": "2026-09-21T05:49:01-05:00",
+    "subject": "Merge pull request #23 from 2witstudios/docs/pagespace-first-workflow",
+    "files": 3,
+    "additions": 41,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 22,
+    "sha": "fd6340be32e3e69589789693b356f09b75108f27",
+    "date": "2026-09-20T22:26:46-05:00",
+    "subject": "Merge pull request #22 from 2witstudios/chore/metrics-snapshot-24bc19a",
+    "files": 1,
+    "additions": 1,
+    "deletions": 0,
+    "binary": 0
+  },
+  {
+    "pr": 21,
+    "sha": "24bc19afcc55733500e648c7f9acea802f512583",
+    "date": "2026-09-20T22:07:16-05:00",
+    "subject": "Merge pull request #21 from 2witstudios/test/theme-effect",
+    "files": 1,
+    "additions": 6,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 18,
+    "sha": "a0cb24b343040b0eeb66e505ea1b90235cc38cc6",
+    "date": "2026-09-20T22:02:21-05:00",
+    "subject": "Merge pull request #18 from 2witstudios/test/theme-effect",
+    "files": 5,
+    "additions": 137,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 15,
+    "sha": "4b9e708d083f4a43ae3600237d1f2ac456ae3edc",
+    "date": "2026-09-20T22:02:08-05:00",
+    "subject": "Merge pull request #15 from 2witstudios/pu/auth-stage2-acceptance",
+    "files": 4,
+    "additions": 201,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 20,
+    "sha": "d7cb954f487bc3e17b226d503ac7b4176c0afc85",
+    "date": "2026-09-20T22:01:41-05:00",
+    "subject": "Merge pull request #20 from 2witstudios/chore/review-date-helper-and-duplication-gate",
+    "files": 25,
+    "additions": 742,
+    "deletions": 77,
+    "binary": 0
+  },
+  {
+    "pr": 19,
+    "sha": "58c705f293db0c5b39d310c7869ef3e801778603",
+    "date": "2026-09-20T21:58:23-05:00",
+    "subject": "Merge pull request #19 from 2witstudios/feat/auth-log-events-and-client-ip-config",
+    "files": 19,
+    "additions": 573,
+    "deletions": 53,
+    "binary": 0
+  },
+  {
+    "pr": 16,
+    "sha": "f9ff6e2bdeded6ad828839d1e48a923804747c3b",
+    "date": "2026-09-20T21:50:47-05:00",
+    "subject": "Merge pull request #16 from 2witstudios/feat/debate-read-permission",
+    "files": 5,
+    "additions": 140,
+    "deletions": 16,
+    "binary": 0
+  },
+  {
+    "pr": 11,
+    "sha": "dac6ad49b6263fb42577a7dacfb53bf18462d04e",
+    "date": "2026-09-20T21:27:38-05:00",
+    "subject": "Merge pull request #11 from 2witstudios/fix/auth-composition-seams",
+    "files": 9,
+    "additions": 900,
+    "deletions": 54,
+    "binary": 0
+  },
+  {
+    "pr": 13,
+    "sha": "ad7dd93442d9518210940547d5eb83c41dd66a9e",
+    "date": "2026-09-20T21:21:55-05:00",
+    "subject": "Merge pull request #13 from 2witstudios/fix/evidence-gate-tsx-tests",
+    "files": 3,
+    "additions": 94,
+    "deletions": 9,
+    "binary": 0
+  },
+  {
+    "pr": 12,
+    "sha": "9eabc7bac7c4f9202e690a28f49b724cfb61fa39",
+    "date": "2026-09-20T21:15:10-05:00",
+    "subject": "Merge pull request #12 from 2witstudios/test/ui-shell-coverage",
+    "files": 26,
+    "additions": 1233,
+    "deletions": 1,
+    "binary": 0
+  },
+  {
+    "pr": 14,
+    "sha": "5c421429b1f96529dda521242e6d47cdc708fcf4",
+    "date": "2026-09-20T21:11:04-05:00",
+    "subject": "Merge pull request #14 from 2witstudios/fix/web-csp-and-handlers",
+    "files": 22,
+    "additions": 400,
+    "deletions": 47,
+    "binary": 0
+  },
+  {
+    "pr": 10,
+    "sha": "cbdc3633afa555a0d66ffb5832ab476dd1ce9b32",
+    "date": "2026-09-20T21:08:55-05:00",
+    "subject": "Merge pull request #10 from 2witstudios/chore/docs-drift-and-guardrails",
+    "files": 22,
+    "additions": 271,
+    "deletions": 81,
+    "binary": 0
+  },
+  {
+    "pr": 9,
+    "sha": "828eecef3bb8705ef64d14979bc70f1cf5da4271",
+    "date": "2026-09-20T21:08:19-05:00",
+    "subject": "Merge pull request #9 from 2witstudios/fix/seed-contract-and-migration-sanction",
+    "files": 11,
+    "additions": 256,
+    "deletions": 30,
+    "binary": 0
+  },
+  {
+    "pr": 8,
+    "sha": "faa93e3263b070c88ac4bd237ac08c5c1807e637",
+    "date": "2026-09-20T19:21:13-05:00",
+    "subject": "Merge pull request #8 from 2witstudios/pu/dashboard",
+    "files": 103,
+    "additions": 4023,
+    "deletions": 136,
+    "binary": 8
+  },
+  {
+    "pr": 7,
+    "sha": "0f4aa015b6c30324770c9216a134002bc60cc15a",
+    "date": "2026-09-20T19:03:51-05:00",
+    "subject": "Merge pull request #7 from 2witstudios/pu/auth-db-remediation",
+    "files": 34,
+    "additions": 1802,
+    "deletions": 1134,
+    "binary": 0
+  },
+  {
+    "pr": 6,
+    "sha": "1fb4f37c00960e6f8f8ca6c2498a59bbffb23c36",
+    "date": "2026-09-20T17:34:02-05:00",
+    "subject": "Merge pull request #6 from 2witstudios/feat/canvas-documentation-pipeline",
+    "files": 23,
+    "additions": 2835,
+    "deletions": 14,
+    "binary": 0
+  },
+  {
+    "pr": 3,
+    "sha": "d0f8a5b549bad930da7dff8d3ce7a5e31f48a359",
+    "date": "2026-09-20T15:48:07-05:00",
+    "subject": "Merge pull request #3 from 2witstudios/pu/auth-database",
+    "files": 44,
+    "additions": 1282,
+    "deletions": 210,
+    "binary": 0
+  },
+  {
+    "pr": 5,
+    "sha": "f793d9631dd928cee97376d34bf86307d580e5bd",
+    "date": "2026-09-20T15:33:50-05:00",
+    "subject": "Merge pull request #5 from 2witstudios/pu/policy-enforcement-2",
+    "files": 15,
+    "additions": 871,
+    "deletions": 8,
+    "binary": 0
+  },
+  {
+    "pr": 4,
+    "sha": "e2c9b17ab7f696907055c6fa8fd0c151d60e79ef",
+    "date": "2026-09-20T15:31:20-05:00",
+    "subject": "Merge pull request #4 from 2witstudios/pu/notify-standup-channel",
+    "files": 4,
+    "additions": 28,
+    "deletions": 2,
+    "binary": 0
+  },
+  {
+    "pr": 2,
+    "sha": "b99e1d2ef562302540fceb01b8b4730005973ea6",
+    "date": "2026-09-20T14:03:06-05:00",
+    "subject": "Merge pull request #2 from 2witstudios/pu/auth-review-followup",
+    "files": 4,
+    "additions": 76,
+    "deletions": 16,
+    "binary": 0
+  },
+  {
+    "pr": 1,
+    "sha": "d43216b27cc2ad4a970bcd3f2b6c1c9b55664c1d",
+    "date": "2026-09-20T10:15:56-05:00",
+    "subject": "Merge pull request #1 from 2witstudios/pu/auth-foundation",
+    "files": 18,
+    "additions": 1324,
+    "deletions": 33,
+    "binary": 0
+  }
+]

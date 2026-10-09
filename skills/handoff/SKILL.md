@@ -12,9 +12,11 @@ merge, grant yourself Done, weaken criteria or publish secrets.
 1. Commit the coherent branch snapshot and record the full SHA. Branch snapshots
    may retain failing/deferred checks; list reason, remaining work, responsible
    agent and discharge point. Main acceptance still requires all applicable proof.
-2. Push the branch normally; do not bypass hooks. Use `/pr` to open/update a draft
-   for provisional work or an acceptance candidate for completed work. State the
-   difference explicitly; a draft is not completed delivery.
+2. Push the branch normally; do not bypass hooks. Use `/pr` to open/update a
+   normal, ready-for-review PR so external reviewers can run. Use draft only
+   when the owner explicitly requests it. Report provisional scope and failing
+   or deferred checks in the PR; they do not imply draft. Ready-for-review does
+   not assert main acceptance or completed delivery.
 3. Publish/update one Handoff page in Plans/<Epic>: objective, exact candidate,
    criteria → code/test/evidence, checks, producer SHAs/contracts/ownership,
    provisional gaps, remaining work and reproduction commands. Link task, plan,

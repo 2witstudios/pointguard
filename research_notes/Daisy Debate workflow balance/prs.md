@@ -1,0 +1,65 @@
+# Daisy Debate and PageSpace PR/code audit
+
+## What population was actually measured, and can it establish relative speed?
+
+### Takeaway
+Remote PR inventories now provide lifecycle timestamps, while local history provides a changed-size inventory. Neither provides a defensible speed multiplier. The same-date mainline cohorts are heavily mismatched and PageSpace batches many nested feature PRs into one integration merge.
+
+### Cited Findings
+- Authorized coordinator API collection produced 219 Daisy PR records: 208 merged, nine closed without merge, two open; created Sep 20–Oct 9 2026. PageSpace file contains 2,448 records: 2,311 merged, 130 closed without merge, seven open; created Sep 17 2025–Oct 9 2026. Both paginated collectors completed successfully (coordinator confirmed PageSpace exit 0). Sources: [Daisy PR population](https://github.com/2witstudios/daisydebate/pulls?q=is%3Apr), [PageSpace PR population](https://github.com/2witstudios/pagespace/pulls?q=is%3Apr); exact responses in `daisy-pr-inventory.jsonl`, `pagespace-pr-inventory.jsonl`, computed statistics in `remote-pr-metrics.json`.
+- Among PRs **created Oct 1–8**, Daisy has 41 records (34 merged, seven closed unmerged), PageSpace 106 (106 merged). Created-to-merge median among merged PRs is **55.65 minutes Daisy versus 82.13 minutes PageSpace**. The 75th percentile is **6.44 hours Daisy versus 2.51 hours PageSpace**. These are unmatched, observed lifecycle durations, not active execution times or size-adjusted workflow speed. The seven unmerged Daisy PRs are excluded from merged durations, a selection difference. Sources: PR populations above; exact UTC timestamps and calculation in `remote-pr-metrics.json`.
+- Whole-history medians among merged PRs are 1.32 hours Daisy and 1.65 hours PageSpace, but the histories cover ~19 days versus ~13 months, so that comparison is especially weak. Sources: PR populations above.
+- Remote lifecycle timestamps confirm Daisy #140 authorization ADR PR took 1h05m28s; #205 ballot PR 50h17m00s; #206 leaderboard-tier removal 1h02m57s; #211 Round cutover 11h05m20s. PageSpace #2855 scoped Imago surface took 5h54m35s and #2852 final Imago integration 13h02m44s. These illustrate feature heterogeneity and integration delay, not a matched experiment. Sources: [#140](https://github.com/2witstudios/daisydebate/pull/140), [#205](https://github.com/2witstudios/daisydebate/pull/205), [#206](https://github.com/2witstudios/daisydebate/pull/206), [#211](https://github.com/2witstudios/daisydebate/pull/211), [#2855](https://github.com/2witstudios/pagespace/pull/2855), [#2852](https://github.com/2witstudios/pagespace/pull/2852).
+- Local Daisy HEAD is `72c11079b91ee5a49c53099a3e4c200c53d56310` (Oct 8). Its first-parent history contains 199 commits recognizable as PR merges or squash subjects. Local PageSpace HEAD is `0b508a34550e03a16104d50cef0e68789239e6fb` (Oct 6); its first-parent history contains 1,874 such commits. These are **recognized local mainline merge records**, not complete PR counts. Sources: [Daisy snapshot](https://github.com/2witstudios/daisydebate/commit/72c11079b91ee5a49c53099a3e4c200c53d56310), [PageSpace snapshot](https://github.com/2witstudios/pagespace/commit/0b508a34550e03a16104d50cef0e68789239e6fb). Reproducible inventories: `daisy-local-merged-pr-inventory.json`, `pagespace-local-merged-pr-inventory.json`, `local-pr-metrics.json` beside these notes.
+- For Oct 1–8 inclusive, recognized mainline PR merges number 31 Daisy versus 5 PageSpace; medians are 23 versus 13 changed paths, and 728 versus 309 inserted+deleted text lines. These are parent-to-merge diffs, use committer date, include renames, omit binary line counts, and must not be interpreted as agent throughput. Sources: same snapshots above; exact cohort rows in `local-pr-metrics.json`.
+- Daisy #211 is 293 paths / 67,249 text lines; PageSpace #2852 is 706 paths / 122,420 text lines. PageSpace #2852 integrates nested Imago work including #2855, #2854, #2853, #2851, #2850, #2848 and others; counting only mainline PRs collapses these into one. Sources: [Daisy #211](https://github.com/2witstudios/daisydebate/pull/211), [PageSpace #2852](https://github.com/2witstudios/pagespace/pull/2852), [integration merge](https://github.com/2witstudios/pagespace/commit/4fdfcf2b8).
+
+### Inferences
+- The mainline count difference is a topology/batching effect and cannot settle which workflow is faster. Remote raw medians do not establish that Daisy is slower overall; its recent upper tail is longer, consistent with expensive outlier features but not proof of agent inefficiency.
+- Useful matched analysis requires PR creation/draft/ready/review/merge timestamps and branch-level histories; commit timestamps alone mix development, interruption, integration, and merge wait.
+
+### Gaps
+- GitHub CLI sandbox request failed with `error connecting to api.github.com`. Required escalation used **gh api**, `--paginate`, and approved-prefix request `['gh','api']`; it awaited approval and was aborted by user after 556.6 seconds. The request produced no evidence; its empty `daisy-pr-pages.json` placeholder was removed during repository cleanup.
+- Coordinator subsequently obtained remote inventories and lifecycle statistics above. Reviews, comments, check-run/rerun counts and detailed timelines remain uncollected. A targeted PR205 review request also failed sandbox network, then escalation was aborted after 130.1 seconds. No reliable matched speed multiplier is available.
+- All recognizable local first-parent PR merges were indexed by diff metadata; only the targeted fixes below were semantically inspected. This is not an all-line audit of either repository.
+
+## Which review changes materially improved behavior?
+
+### Takeaway
+Concrete inspected changes show review can catch meaningful state-loss and race-condition bugs. PageSpace also has substantive review catches, so the tradeoff is not Daisy quality versus PageSpace speed alone.
+
+### Cited Findings
+- Daisy #205 hydration fix reads actual uncontrolled form values on mount and initializes winner/scores from those controls instead of only the server response. Its commit also records CRLF counting normalization and a scripts-delayed browser regression. Actual inspected UI diff adds `useEffect`, form ref, `FormData` read and state synchronization. This preserves judge input made before hydration; it is a functional catch, not paperwork. Source: [413d49fc](https://github.com/2witstudios/daisydebate/commit/413d49fcef25ef0f0c3fc6fcbdd7ec322032f70a), [#205](https://github.com/2witstudios/daisydebate/pull/205).
+- Daisy #211 adds an explicit segment index to yield commands and rejects a yield if it does not refer to the currently open segment. It also filters round document listing to owned library documents plus referenced scratch documents, rather than all owned scratch documents. Both are real behavior corrections: stale commands no longer act on a subsequent segment, and unrelated scratch documents no longer enter a round workspace. Source: [e285c12a](https://github.com/2witstudios/daisydebate/commit/e285c12a56a4b4ee3719e6c75f88e1e0e035353f).
+- Daisy #211 final playback fix changes a fire-and-forget, swallowed-error `heard` API update into an awaited promise; retains each controller completion promise and waits for both finishing and playback cleanup before fetching the ballot. A failed correction produces a recoverable UI error instead of accepting the ballot. Source: [5f0f8de4](https://github.com/2witstudios/daisydebate/commit/5f0f8de4fd773c21f8e869a16917a8785c047037).
+- PageSpace Imago #2855 applies the existing MCP scope filter **before** splitting tools into advertised/deferred surfaces. It passes `driveScoped` from authentication and adds tests ensuring account-level tools such as `create_drive` are absent from all scoped surfaces. This is a meaningful advertised-capability invariant; comments explicitly say execution-time permission gates were already intact. Source: [0692456f4](https://github.com/2witstudios/pagespace/commit/0692456f4a7c76988adc67c090906f12edb89b68), [#2855](https://github.com/2witstudios/pagespace/pull/2855).
+
+### Inferences
+- Keep independent behavioral review for hydration, asynchronous finalization, stale commands, data scoping and auth/tool capability changes.
+- A single risk-focused review can be valuable even when CI passes: none of these semantics follows from a blanket green build alone.
+
+### Gaps
+- Review origin is supported by commit messages/test comments and the companion conversation audit, not an independently fetched complete PR-thread history.
+- Added regression tests were inspected selectively, not executed. This audit made no code changes and ran no tests.
+
+## What concrete churn is visible, and where should balance change?
+
+### Takeaway
+#205 shows review refinements and administrative commits interleaved in a small feature; #211 shows policy-driven refactors interleaved with serious runtime fixes. The evidence supports separating substantive risk review from policy/CI administration, but not removing review or attributing every elapsed hour to agents.
+
+### Cited Findings
+- #205 has eight non-merge branch commits unique relative to the pre-merge mainline: initial feature at Oct 6 07:26:29; untrack tool files 07:27:04; initial review fixes 08:24:45; protocol refactor 08:26:15; hydration fix 08:58:28; layout fix 09:33:23; third re-review minors 10:17:01; ignore tool files 11:20:50. It merged Oct 8 09:44:46 after reconciliation with current main. The 3h54m21s first-feature-to-last-unique-commit interval and 50h18m17s first-feature-to-merge interval are observed wall-clock windows, **not measured active agent time**. Sources: [#205](https://github.com/2witstudios/daisydebate/pull/205), [initial commit](https://github.com/2witstudios/daisydebate/commit/c9b9179d), [tool-ignore commit](https://github.com/2witstudios/daisydebate/commit/85b6c962), [merge](https://github.com/2witstudios/daisydebate/commit/72c11079).
+- #205 third re-review minors include actual small-screen usability/accessibility improvements: full-width narrow sliders, wrapping score pairs/names, a neutral-contrast Split badge, fixing visually hidden header placement, and responsive winner-heading layout. These are not all administrative; classify as polish/accessibility rather than runtime correctness. Source: [f6d8d5a3](https://github.com/2witstudios/daisydebate/commit/f6d8d5a3dde542ff1f8e6972bdf797a60962f03c).
+- #211 Oct 7 contains explicit gate accommodation commits: split oversized modules (14:44), consolidate duplication detector refusal (15:26), cover refusal paths/contract helpers that gates count (15:50), smaller adapter unit coverage and DB floor strategy (16:06). Later it contains runtime/privacy fixes (20:26), stale segment/document scope fixes (21:08), and final playback barrier (22:05). This mix is visible in history; commit titles alone do not prove earlier refactors were unnecessary. Source: [#211](https://github.com/2witstudios/daisydebate/pull/211), [split modules](https://github.com/2witstudios/daisydebate/commit/a491dc48), [duplication](https://github.com/2witstudios/daisydebate/commit/3c82da62), [gate coverage](https://github.com/2witstudios/daisydebate/commit/4f8586ab), [runtime/privacy fix](https://github.com/2witstudios/daisydebate/commit/b4f8d55a).
+- PageSpace also has integration/quality accommodation commits around its Imago release: merge current master, explicit integration timeout budgets, duplication ratchet, global mock exports, CodeQL/security/spec fixes and visual baselines. This is not a zero-overhead baseline. Source: [#2852](https://github.com/2witstudios/pagespace/pull/2852), [#2853](https://github.com/2witstudios/pagespace/pull/2853), [#2850](https://github.com/2witstudios/pagespace/pull/2850), [mock exports](https://github.com/2witstudios/pagespace/commit/7d144d70e).
+
+### Inferences
+- Separate independent review findings from CI gating; attach CI evidence once rather than make every review reconstruct it.
+- Give reviewers one whole-feature behavioral snapshot first, then delta review focused on fixes and affected risks. Batch nonblocking polish so each minor does not induce a complete new review/gate cycle.
+- Track cost against distinct substantive defects found, not the number of reviewer messages or green checks. Distinguish user-impact correctness, accessibility/polish, maintainability, and administration.
+- Evaluate this with active minutes/tokens and replayed gates per feature. Raw merge duration overstates active cost, especially #205, whose branch was later reconciled against a large Round-model cutover.
+
+### Gaps
+- No measured CI rerun counts, review-induced tokens, or complete first-full-shape timestamps can be derived from local git alone.
+- PR140 code/thread evidence not located independently in the limited local inspection; rely on the conversation audit for its blockage case and label that provenance.
+- No behavioral exploitation of clean-approval versus approval-with-minors verifier differences was established.

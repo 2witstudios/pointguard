@@ -30,11 +30,13 @@ applicable proof on the final composed candidate; never shrink the requested
 outcome to the subset already passing.
 
 Review stable snapshots. Shared mutable worktrees hold mutation only while the
-reviewer uses them. Branch feedback informs development and cannot grant main
-acceptance. Builders resolve findings and obtain independent delta review without
-round limits or owner relays. Main requires completed transitions, contract and
-security reconciliation, migration integrity and independent exact-head review
-under required checks. Autonomous agents never merge directly.
+reviewer uses them. Review runs and publishes independently of CI status, using
+the repository's existing review-record workflow and normal verdicts. Keep review
+scope, code findings, CI results and verifier status distinct. Builders resolve
+findings and obtain independent delta review without round limits or owner
+relays. Main requires completed transitions, contract and security reconciliation,
+migration integrity, complete independent exact-head review and passing required
+checks. Autonomous agents never merge directly.
 
 Preserve production identity, secret, deployment and data sign-offs. Escalate
 changed product intent, scope cuts, real conflicts or protected actions, and

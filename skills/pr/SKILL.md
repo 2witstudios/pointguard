@@ -23,6 +23,7 @@ GitHub cannot render PageSpace mentions: in PR text use URLs `https://pagespace.
 Link direction is specific → general. Universal prompts and skills are linked FROM task prompts; never edit a universal prompt to point at a task or PR.
 Use the repository's PR template when one exists (.github/pull_request_template.md); fill every section, add the PageSpace section, delete nothing.
 Report verification honestly: exact SHA, commands run, and NOT RUN with the reason. Never an inferred pass.
+Owner preference: “create a PR” means a normal, ready-for-review PR so external reviewers can run. Use draft only when the owner explicitly requests draft. Incomplete work, failing/pending checks, provisional scope or missing acceptance evidence do not imply draft; describe them honestly in the PR. Ready-for-review does not assert acceptance or permission to merge.
 Never merge, approve, or mark a task Done from this skill. Never edit the acceptance criteria or scope of a task delegated to you.
 The PR title is a conventional commit (`type(scope): summary`, `!` for breaking): downstream automation classifies the merge from it.
 Write every task code in full in the Tasks line (`AUTH-3.1 · AUTH-3.2`, never a range like `AUTH-3.1–3.6`): automation extracts task codes from the PR title, branch and body, and a range loses all but the first.
@@ -82,8 +83,8 @@ Criteria are the bullets above the "Related pages" block of each task page, quot
 ### 4 — Open or update
 
 openOrUpdate() {
-existing PR for the branch (`gh pr view --json number,isDraft`) => `gh pr edit <n> --body-file <file>`; when promoting a completed candidate from provisional draft, run `gh pr ready <n>` and verify `isDraft` is false. Keep incomplete work draft; ready-for-review does not assert main acceptance.
-none => `gh pr create [--draft for provisional work] --base <default> --title "<conventional title>" --body-file <file>`
+existing PR for the branch (`gh pr view --json number,isDraft`) => `gh pr edit <n> --body-file <file>`; if draft was agent-selected without an explicit owner request, run `gh pr ready <n>` and verify `isDraft` is false. Preserve an explicitly owner-requested draft until the owner requests promotion.
+none => `gh pr create --base <default> --title "<conventional title>" --body-file <file>`; add `--draft` only when the owner explicitly requests draft.
 Write the body to a scratch file whose name is unique to this branch (e.g. `<scratchpad>/pr-body-<branch with / replaced by ->.md`); a shared name let one agent publish another's body (PR #9 went up with PR #10's). Never inline multi-line bodies in the shell.
 Verify after writing: `gh pr view <n> --json body --jq .body` must equal the file (ignoring a trailing newline). A mismatch => rewrite it with `gh pr edit` and check again; never report a PR whose published body you did not verify.
 Requesting the merge is not this skill's job. An autonomous agent requests it only with `gh pr merge --auto --merge`, and only where the repository's required review check is live (the live `main` ruleset requires `review-record`); otherwise it reports "ready for owner merge" to its parent. It never merges directly.

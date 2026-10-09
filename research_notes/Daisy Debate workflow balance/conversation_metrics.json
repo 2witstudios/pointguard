@@ -1,0 +1,111 @@
+{
+  "snapshot_note": "live files captured during audit; costs not calculated; imports excluded; Codex cumulative usage subtracts initial inherited baseline",
+  "native_groups": [
+    {
+      "provider": "claude",
+      "project": "daisydebate",
+      "native_files": 150,
+      "top_level": 59,
+      "tool_calls": 12654,
+      "compactions": 6,
+      "usage": {
+        "cache_creation_input_tokens": 37957705,
+        "cache_read_input_tokens": 4072935665,
+        "input_tokens": 3690242,
+        "output_tokens": 8009462
+      },
+      "kinds": {
+        "builder_or_coordinator": 119,
+        "implementation_review": 31
+      },
+      "start": "2026-09-29T16:47:01.643000+00:00",
+      "end": "2026-10-08T03:56:04.423000+00:00"
+    },
+    {
+      "provider": "claude",
+      "project": "pagespace",
+      "native_files": 7,
+      "top_level": 5,
+      "tool_calls": 217,
+      "compactions": 0,
+      "usage": {
+        "input_tokens": 406,
+        "cache_creation_input_tokens": 747069,
+        "cache_read_input_tokens": 16949397,
+        "output_tokens": 107266
+      },
+      "kinds": {
+        "builder_or_coordinator": 7
+      },
+      "start": "2026-09-26T13:50:24.564000+00:00",
+      "end": "2026-10-03T20:14:29.257000+00:00"
+    },
+    {
+      "provider": "codex",
+      "project": "daisydebate",
+      "native_files": 85,
+      "top_level": 85,
+      "tool_calls": 4418,
+      "compactions": 31,
+      "usage": {
+        "input_tokens": 564900876,
+        "cached_input_tokens": 548407936,
+        "output_tokens": 1755509,
+        "reasoning_output_tokens": 522238,
+        "total_tokens": 566656385
+      },
+      "kinds": {
+        "plan_review": 27,
+        "builder_or_coordinator": 47,
+        "implementation_review": 11
+      },
+      "start": "2026-09-29T17:10:15.358000+00:00",
+      "end": "2026-10-09T17:29:15.461000+00:00",
+      "inherited_baseline_removed": {
+        "input_tokens": 8065231,
+        "cached_input_tokens": 7793280,
+        "output_tokens": 33283,
+        "total_tokens": 8098514
+      },
+      "raw_final_cumulative_totals": {
+        "input_tokens": 572966107,
+        "cached_input_tokens": 556201216,
+        "output_tokens": 1788792,
+        "total_tokens": 574754899
+      }
+    },
+    {
+      "provider": "codex",
+      "project": "pagespace",
+      "native_files": 4,
+      "top_level": 4,
+      "tool_calls": 628,
+      "compactions": 6,
+      "usage": {
+        "input_tokens": 86125617,
+        "cached_input_tokens": 83958656,
+        "output_tokens": 266038,
+        "reasoning_output_tokens": 84227,
+        "total_tokens": 86391655
+      },
+      "kinds": {
+        "builder_or_coordinator": 3,
+        "implementation_review": 1
+      },
+      "start": "2026-10-08T14:06:19.374000+00:00",
+      "end": "2026-10-09T17:29:13.731000+00:00",
+      "inherited_baseline_removed": {
+        "input_tokens": 9438223,
+        "cached_input_tokens": 8925824,
+        "output_tokens": 28834,
+        "total_tokens": 9467057
+      },
+      "raw_final_cumulative_totals": {
+        "input_tokens": 95563840,
+        "cached_input_tokens": 92884480,
+        "output_tokens": 294872,
+        "total_tokens": 95858712
+      }
+    }
+  ]
+}

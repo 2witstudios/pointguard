@@ -1,0 +1,380 @@
+{
+  "daisy": {
+    "local_head": "72c11079b91ee5a49c53099a3e4c200c53d56310",
+    "recognized_first_parent_prs": 199,
+    "cohort_count": 31,
+    "cohort_files_median": 23,
+    "cohort_lines_median": 728,
+    "cohort": [
+      {
+        "pr": 205,
+        "sha": "72c11079b91ee5a49c53099a3e4c200c53d56310",
+        "date": "2026-10-08T09:44:46-05:00",
+        "subject": "Merge pull request #205 from 2witstudios/pu/ballot",
+        "files": 34,
+        "additions": 2231,
+        "deletions": 189,
+        "binary": 0
+      },
+      {
+        "pr": 209,
+        "sha": "6dffb507abdb246b75a51818796eac9ebdeff7a0",
+        "date": "2026-10-07T23:49:13-05:00",
+        "subject": "Merge pull request #209 from 2witstudios/fix/onboarding-codex-findings",
+        "files": 5,
+        "additions": 122,
+        "deletions": 22,
+        "binary": 0
+      },
+      {
+        "pr": 214,
+        "sha": "df1b108d2bf6a5fced0f0a4bee03b702f3fe8ec0",
+        "date": "2026-10-07T23:32:56-05:00",
+        "subject": "Merge pull request #214 from 2witstudios/docs/video-round-reconcile",
+        "files": 2,
+        "additions": 178,
+        "deletions": 351,
+        "binary": 0
+      },
+      {
+        "pr": 215,
+        "sha": "5f90f188beb1b3bcc3595f7c477a28fe2f35a3af",
+        "date": "2026-10-07T23:31:30-05:00",
+        "subject": "Merge pull request #215 from 2witstudios/chore/codex-launch-config",
+        "files": 2,
+        "additions": 2,
+        "deletions": 1,
+        "binary": 0
+      },
+      {
+        "pr": 213,
+        "sha": "238496d22288480c0b3f94409e5b3d90f538998e",
+        "date": "2026-10-07T23:23:50-05:00",
+        "subject": "Merge pull request #213 from 2witstudios/pu/api-org",
+        "files": 285,
+        "additions": 404,
+        "deletions": 348,
+        "binary": 0
+      },
+      {
+        "pr": 212,
+        "sha": "4d406eb7d4a90966b8180384165d1abce90906de",
+        "date": "2026-10-07T22:54:28-05:00",
+        "subject": "Merge pull request #212 from 2witstudios/pu/agentmd",
+        "files": 2,
+        "additions": 6,
+        "deletions": 0,
+        "binary": 0
+      },
+      {
+        "pr": 211,
+        "sha": "6acf9733de168dc6430d15002b829582b02e37a3",
+        "date": "2026-10-07T22:30:27-05:00",
+        "subject": "Merge pull request #211 from 2witstudios/pu/one-round-model",
+        "files": 293,
+        "additions": 23543,
+        "deletions": 43706,
+        "binary": 0
+      },
+      {
+        "pr": 210,
+        "sha": "3ef23b6e8f2ebd032fd6edf008c94b0cdc642a46",
+        "date": "2026-10-06T22:20:32-05:00",
+        "subject": "Merge pull request #210 from 2witstudios/pu/cap-adr",
+        "files": 2,
+        "additions": 265,
+        "deletions": 0,
+        "binary": 0
+      },
+      {
+        "pr": 208,
+        "sha": "51a0a8c18a6423fb59dbc53d8cac3b38158244c6",
+        "date": "2026-10-06T19:56:25-05:00",
+        "subject": "Merge pull request #208 from 2witstudios/pu/rounds",
+        "files": 11,
+        "additions": 1266,
+        "deletions": 82,
+        "binary": 0
+      },
+      {
+        "pr": 207,
+        "sha": "0df8f99a287068bbdb47e049d21d8461f68069c2",
+        "date": "2026-10-06T14:31:43-05:00",
+        "subject": "Merge pull request #207 from 2witstudios/pu/sharp-audit2",
+        "files": 1,
+        "additions": 27,
+        "deletions": 27,
+        "binary": 0
+      },
+      {
+        "pr": 206,
+        "sha": "fdc61a59b766704f3f56403646d862018f7cc9e8",
+        "date": "2026-10-06T09:09:29-05:00",
+        "subject": "Merge pull request #206 from 2witstudios/feat/rate-1.4.2-no-debater-tiers",
+        "files": 46,
+        "additions": 182,
+        "deletions": 546,
+        "binary": 6
+      },
+      {
+        "pr": 195,
+        "sha": "4a900aa7f926359ae57279eaa7063205a02f7e63",
+        "date": "2026-10-06T08:49:32-05:00",
+        "subject": "Merge pull request #195 from 2witstudios/pu/debate-room",
+        "files": 101,
+        "additions": 15504,
+        "deletions": 352,
+        "binary": 0
+      },
+      {
+        "pr": 204,
+        "sha": "f085b9f609d142a6702d341eac12493964c1fa3d",
+        "date": "2026-10-06T07:43:22-05:00",
+        "subject": "Merge pull request #204 from 2witstudios/feat/rate-1.4.1-standings-reads",
+        "files": 10,
+        "additions": 1014,
+        "deletions": 33,
+        "binary": 0
+      },
+      {
+        "pr": 203,
+        "sha": "8e6f3dc06db4c9b8b8dac5c772edce45427e6873",
+        "date": "2026-10-06T07:25:31-05:00",
+        "subject": "Merge pull request #203 from 2witstudios/docs/adr-0053-reconcile-bound",
+        "files": 1,
+        "additions": 13,
+        "deletions": 8,
+        "binary": 0
+      },
+      {
+        "pr": 196,
+        "sha": "ae43315b3d938c944cf486fddce8554086546985",
+        "date": "2026-10-06T06:39:35-05:00",
+        "subject": "Merge pull request #196 from 2witstudios/docs/video-adr-0053",
+        "files": 2,
+        "additions": 361,
+        "deletions": 0,
+        "binary": 0
+      },
+      {
+        "pr": 200,
+        "sha": "92c3dd2a5767c10d5b42d2aed93f167f54b15a41",
+        "date": "2026-10-06T06:37:50-05:00",
+        "subject": "Merge pull request #200 from 2witstudios/feat/rate-1.3-rate-debate",
+        "files": 23,
+        "additions": 2226,
+        "deletions": 38,
+        "binary": 0
+      },
+      {
+        "pr": 199,
+        "sha": "0e4b77c2284b0675ea2b2d7c7333464d5fde8a27",
+        "date": "2026-10-06T06:37:31-05:00",
+        "subject": "Merge pull request #199 from 2witstudios/feat/rate-1.2-ladders-seasons",
+        "files": 25,
+        "additions": 6369,
+        "deletions": 29,
+        "binary": 0
+      },
+      {
+        "pr": 198,
+        "sha": "f7a6e685aab8c67be51a47d2d7b630ad8af564be",
+        "date": "2026-10-05T21:32:03-05:00",
+        "subject": "Merge pull request #198 from 2witstudios/feat/rate-1.1-glicko2",
+        "files": 11,
+        "additions": 1044,
+        "deletions": 0,
+        "binary": 0
+      },
+      {
+        "pr": 202,
+        "sha": "43f0317026993341af183b25731ade25a7ced91e",
+        "date": "2026-10-05T20:58:39-05:00",
+        "subject": "Merge pull request #202 from 2witstudios/docs/adr-tinypool-audit-exception",
+        "files": 5,
+        "additions": 62,
+        "deletions": 10,
+        "binary": 0
+      },
+      {
+        "pr": 201,
+        "sha": "4991aef6865c32d2667dc6a49e32edb4aab3b5f4",
+        "date": "2026-10-05T20:58:19-05:00",
+        "subject": "Merge pull request #201 from 2witstudios/fix/audit-tinypool",
+        "files": 4,
+        "additions": 35,
+        "deletions": 9,
+        "binary": 0
+      },
+      {
+        "pr": 197,
+        "sha": "de9844f3b6c3f230fb92be6dd7ed23140a7d3f45",
+        "date": "2026-10-05T20:04:29-05:00",
+        "subject": "Merge pull request #197 from 2witstudios/refactor/shared-speech-recorder",
+        "files": 5,
+        "additions": 352,
+        "deletions": 110,
+        "binary": 0
+      },
+      {
+        "pr": 194,
+        "sha": "ae1f43946dd098e72f90142bb9a3b950a0394705",
+        "date": "2026-10-05T19:59:04-05:00",
+        "subject": "Merge pull request #194 from 2witstudios/pu/onboarding",
+        "files": 119,
+        "additions": 9115,
+        "deletions": 44,
+        "binary": 42
+      },
+      {
+        "pr": 193,
+        "sha": "901efa0babfaee4192ba4239c8f644327e7e5845",
+        "date": "2026-10-05T12:09:25-05:00",
+        "subject": "Merge pull request #193 from 2witstudios/feat/sidebar-toggles-and-legal-foot",
+        "files": 14,
+        "additions": 199,
+        "deletions": 175,
+        "binary": 0
+      },
+      {
+        "pr": 192,
+        "sha": "6c7add7e84200c91efa8f3b188ce6652237a101a",
+        "date": "2026-10-05T08:37:08-05:00",
+        "subject": "Merge pull request #192 from 2witstudios/fix/collapse-controls-on-top",
+        "files": 39,
+        "additions": 437,
+        "deletions": 247,
+        "binary": 18
+      },
+      {
+        "pr": 191,
+        "sha": "f14eec70caab3a09a5a731485dfff2611ee749d2",
+        "date": "2026-10-04T22:50:25-05:00",
+        "subject": "Merge pull request #191 from 2witstudios/fix/sidebar-full-height",
+        "files": 27,
+        "additions": 25,
+        "deletions": 4,
+        "binary": 24
+      },
+      {
+        "pr": 190,
+        "sha": "08eabd0edfc0c7776961a9233a0ff2d85117aca6",
+        "date": "2026-10-04T22:11:56-05:00",
+        "subject": "Merge pull request #190 from 2witstudios/fix/ai-debate-copy",
+        "files": 91,
+        "additions": 671,
+        "deletions": 1724,
+        "binary": 26
+      },
+      {
+        "pr": 188,
+        "sha": "11f9658451bd892eb8013c07abba8c7ab8849e0c",
+        "date": "2026-10-04T19:07:13-05:00",
+        "subject": "Merge pull request #188 from 2witstudios/aidb/bot-voices",
+        "files": 27,
+        "additions": 1074,
+        "deletions": 247,
+        "binary": 0
+      },
+      {
+        "pr": 189,
+        "sha": "ea84739f2eae05c7773abd0dca598dffedd74c8b",
+        "date": "2026-10-04T19:05:54-05:00",
+        "subject": "Merge pull request #189 from 2witstudios/pu/mock-ui-changes",
+        "files": 336,
+        "additions": 936,
+        "deletions": 2685,
+        "binary": 47
+      },
+      {
+        "pr": 186,
+        "sha": "751324149046e0af5409f25bd8ece894cff0a4dc",
+        "date": "2026-10-04T17:15:02-05:00",
+        "subject": "Merge pull request #186 from 2witstudios/aidb/premium-ai-debates",
+        "files": 103,
+        "additions": 13446,
+        "deletions": 27,
+        "binary": 0
+      },
+      {
+        "pr": 187,
+        "sha": "196b52c6e3fa2274e3dc3135df19b474c3d8120b",
+        "date": "2026-10-04T14:40:51-05:00",
+        "subject": "Merge pull request #187 from 2witstudios/fix/ci-green",
+        "files": 25,
+        "additions": 51,
+        "deletions": 17,
+        "binary": 18
+      },
+      {
+        "pr": 185,
+        "sha": "28f4f37952cb02fcd83fa77e1302f5fccda6bb22",
+        "date": "2026-10-03T17:35:26-05:00",
+        "subject": "Merge pull request #185 from 2witstudios/feat/mock-app",
+        "files": 330,
+        "additions": 12551,
+        "deletions": 1967,
+        "binary": 0
+      }
+    ]
+  },
+  "pagespace": {
+    "local_head": "0b508a34550e03a16104d50cef0e68789239e6fb",
+    "recognized_first_parent_prs": 1874,
+    "cohort_count": 5,
+    "cohort_files_median": 13,
+    "cohort_lines_median": 309,
+    "cohort": [
+      {
+        "pr": 2852,
+        "sha": "4fdfcf2b8287e5a914211afc9a01988e203e0e73",
+        "date": "2026-10-06T16:43:27-05:00",
+        "subject": "Merge pull request #2852 from 2witstudios/pu/imago",
+        "files": 706,
+        "additions": 121328,
+        "deletions": 1092,
+        "binary": 14
+      },
+      {
+        "pr": 2816,
+        "sha": "0c8090863fde42289480f9ddf77b7336d4572238",
+        "date": "2026-10-05T15:54:03-05:00",
+        "subject": "Merge pull request #2816 from 2witstudios/pu/ci-cancel-superseded",
+        "files": 2,
+        "additions": 17,
+        "deletions": 0,
+        "binary": 0
+      },
+      {
+        "pr": 2824,
+        "sha": "61a862d80ef4f6655802659e87ee1529426ce2d2",
+        "date": "2026-10-05T15:53:38-05:00",
+        "subject": "Merge pull request #2824 from 2witstudios/pu/fix-advisory-lock-error-listener",
+        "files": 20,
+        "additions": 1145,
+        "deletions": 65,
+        "binary": 0
+      },
+      {
+        "pr": 2758,
+        "sha": "b761de757b46015723808403d343dc33506a3772",
+        "date": "2026-10-02T08:47:22-05:00",
+        "subject": "Merge pull request #2758 from 2witstudios/feat/ai-model-catalog-refresh",
+        "files": 13,
+        "additions": 227,
+        "deletions": 82,
+        "binary": 0
+      },
+      {
+        "pr": 2757,
+        "sha": "07d72676bfa7bd0f38a7e4d12a4160f7532bf6f5",
+        "date": "2026-10-01T05:35:35-05:00",
+        "subject": "Merge pull request #2757 from 2witstudios/pu/task-load",
+        "files": 5,
+        "additions": 226,
+        "deletions": 32,
+        "binary": 0
+      }
+    ]
+  }
+}

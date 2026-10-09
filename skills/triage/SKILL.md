@@ -23,5 +23,8 @@ applicable checks and requests delta review. No review pass-count escalation.
 Keep criteria intact. File unfixed findings under the owning open leaf, otherwise
 an Issues task, and link the origin. Report exact candidate, fixes, remaining
 proof and the review record. Escalate product intent changes or protected actions;
-continue independent work. Use branch feedback for provisional checks and full
-applicable gates before main acceptance. Never fabricate PASS or merge directly.
+continue independent work. Request and publish review independently of pending,
+passing or failing CI. Reuse the repository's review-record workflow; keep the
+code-review verdict separate from CI and verifier status. Main acceptance requires
+complete independent review and all applicable gates. Never fabricate PASS or
+merge directly.

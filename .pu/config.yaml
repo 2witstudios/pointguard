@@ -1,0 +1,32 @@
+defaultAgent: claude
+envFiles:
+  - .env
+  - .env.local
+
+# Agent launch configuration — uncomment and customize as needed.
+# Agents not listed here use built-in defaults.
+# agents:
+#   claude:
+#     name: claude
+#     command: claude
+#     launchArgs:                  # Default: ["--dangerously-skip-permissions"]
+#       - "--dangerously-skip-permissions"
+#       # --permission-mode <default|acceptEdits|plan|bypassPermissions>
+#       # --model <sonnet|opus|haiku>
+#       # --effort <low|medium|high>
+#       # --allowedTools <tools...>
+#       # --append-system-prompt <prompt>
+#       # --max-budget-usd <amount>
+#   codex:
+#     name: codex
+#     command: codex
+#     launchArgs:                  # Default: ["--full-auto"]
+#       - "--full-auto"
+#       # -a <untrusted|on-request|never>  (approval mode)
+#       # --model <model>
+#   opencode:
+#     name: opencode
+#     command: opencode
+#     launchArgs: []               # Default: [] (auto-approves in run mode)
+#       # --model <provider/model>
+#       # --variant <effort>

@@ -10,6 +10,7 @@ diverge freely. PageSpace-aware where it helps, never required.
 
 | Skill | What it does |
 |---|---|
+| `design` | Explore UI directions and prototypes in PageSpace Canvases, then hand off the selected revision. Codex `$design` / `/prompts:design`, OpenCode `/design`, Claude Code `/pg:design`. |
 | `review` | Full code review, including an explicit OWASP Top 10 pass → publishes a review record to the repo's PageSpace drive, links it from tasks, posts the verdict on the PR. `/review` |
 | `pr` | Open/update a PR whose description links the PageSpace task, plan and prompt pages. `/pr` |
 | `handoff` | Hand a finished branch to review in one step: push, PR, handoff page, task moves, parent notify. `/handoff` |
@@ -35,6 +36,55 @@ installed.
 Links each skill into `~/.claude/skills`, `~/.config/opencode/skills`, and
 `~/.agents/skills`. This repo is the single source of truth — edit here, every
 agent sees the change.
+
+The design workflow has one shared skill body and thin command wrappers. Claude
+Code uses `~/.claude/commands/pg/design.md` for `/pg:design`; OpenCode uses
+`~/.config/opencode/commands/design.md` for `/design`; Codex discovers `$design`
+through `~/.agents/skills` and also gets `/prompts:design`. These wrappers load
+the shared skill without depending on Claude Design or a model provider.
+To install only these new entries, run `zsh ./install-design.sh`. The installer
+preserves unrelated existing entries. Restart the agents after installation.
+PageSpace authoring dependencies are included in the full `./install.sh` install.
+
+### Codex
+
+The shared skills above are already available to Codex through `~/.agents/skills`.
+Invoke them explicitly with `$task`, `$review`, `$triage`, `$rtc`, `$pr`, or
+`$pagespace-cli`. These names select the PointGuard workflows, including when
+Codex has a built-in command with the same name.
+
+Install Codex slash prompts and the additional Codex-only skills separately:
+
+```sh
+zsh ./install-codex.sh
+```
+
+This links `codex-prompts/*.md` into `${CODEX_HOME:-$HOME/.codex}/prompts` and
+`codex-skills/` into `${CODEX_HOME:-$HOME/.codex}/skills`. It refuses to overwrite
+unrelated existing entries. It does not change Claude Code, OpenCode, the shared
+skills, or plugin caches.
+
+Custom prompts explicitly load the corresponding workflow and pass along your
+arguments. Use `/prompts:task`, `/prompts:task sync <epic>`, `/prompts:triage`,
+`/prompts:rtc`, `/prompts:review`, `/prompts:plan`, `/prompts:pu`, or
+`/prompts:orchestrate`. Every shared PointGuard and PageSpace skill has a prompt
+wrapper. Restart Codex after installing or changing prompts.
+
+The `/prompts:` namespace distinguishes your workflows from built-in commands
+such as `/plan` and `/review`. Codex custom prompts are deprecated upstream but
+remain the requested explicit slash-command interface; skills remain available
+alongside them. The wrappers reference this checkout's absolute paths, so
+regenerate them if the checkout moves.
+
+| Codex addition | What it does |
+|---|---|
+| `$plan` | Draft and independently review a plan; continue implementation only when already authorized. |
+| `$orchestrate` | PurePoint's orchestration command converted into a skill. |
+| `$pu-cli` | PurePoint's complete CLI command reference converted into a skill; complements the existing `$pu` awareness skill. |
+
+The PurePoint conversions originate from the installed `pu` 0.1.0 command files.
+They are independent Codex copies; check live CLI help for version-sensitive
+options. Restart Codex if newly installed skills do not appear in the selector.
 
 ## Attribution
 

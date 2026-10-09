@@ -23,6 +23,8 @@ for target in $TARGETS; do
   done
   for skill in "$REPO"/skills/*(/); do
     name="${skill:t}"
+    # Claude uses /pg:design; keep its built-in /design available.
+    [[ "$target" == "$HOME/.claude/skills" && "$name" == design ]] && continue
     dest="$target/$name"
     if [[ -L "$dest" ]]; then
       rm -f "$dest"
@@ -34,3 +36,5 @@ for target in $TARGETS; do
     echo "linked $dest -> $skill"
   done
 done
+
+zsh "$REPO/install-design.sh"
