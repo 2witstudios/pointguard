@@ -3,7 +3,7 @@ name: pagespace-canvas-websites
 description: >
   Builds websites, landing pages, dashboards, forms and interactive pages on PageSpace CANVAS pages: HTML/CSS/JS authoring, the iframe sandbox and CSP rules, theming, linking pages, embedding uploaded files, contact/signup forms, and publishing to a public site. Use when building, styling, publishing or fixing a PageSpace CANVAS page or website.
 ---
-> **Source:** PageSpace's built-in `/canvas-websites` skill, copied verbatim from the app
+> **Source:** Adapted from PageSpace's built-in `/canvas-websites` skill in the app
 > (`apps/web/src/lib/ai/skills/bodies/canvas-websites.ts`). The body below was written for the in-app agent
 > and names its tools. From outside the app, use the `pagespace` CLI, `@pagespace/sdk` or
 > `pagespace mcp` (see /pagespace-cli, /pagespace-sdk) — the tool mapping is in the
@@ -17,7 +17,7 @@ You are building on a CANVAS page: raw HTML/CSS/JS stored as the page's content,
 - The page content IS the HTML. A shared renderer wraps it in a generated document — doctype, `<head>` (charset, viewport, title, CSP), a baseline reset (`html,body{margin:0;padding:0}`), then your markup inside a real `<body>`. The in-app iframe and the published page render from the same document, so what you see in-app is what publishes.
 - Write a body FRAGMENT, not a full document. If you write a full document with an `<html>` tag, it is unwrapped: only the body content and any `<style>` blocks survive. The unwrap triggers ONLY on an `<html>` tag — a bare `<head>`/`<body>` pair without `<html>` is NOT unwrapped, and those tags land verbatim inside the rendered body. So: either a plain fragment (preferred) or a complete `<html>` document, never a partial shell. SEO/OG meta from a hand-written head is honored at publish time (see Publishing), but in-app everything else in that head is discarded.
 - `<style>` blocks anywhere in your HTML are extracted, sanitized, and hoisted into the generated `<head>`, after the baseline reset — your `html`/`body` rules still win.
-- `<script>` tags are preserved verbatim and execute. Isolation is by origin (the sandbox), not by a script sanitizer — write real interactive JS freely, but inline only (see the sandbox rules).
+- `<script>` tags are preserved verbatim and execute. Isolation is by origin (the sandbox), not by a script sanitizer — write interactive JS inline in baseline mode; site mode also permits HTTPS external scripts (see the mode-specific CSP below).
 - Because only the UA margin is reset, full-bleed layouts work: a `min-height:100vh` section reaches the edges with no 8px gap.
 
 ## The sandbox and what it blocks
@@ -81,7 +81,7 @@ Never use `/api/files/...` URLs. The `/dashboard/{driveId}/{pageId}/view` form i
 
 - In-app, the app shell detects these refs and swaps them for tokenized URLs the sandboxed iframe (which has no session) can actually load — so `<img src>` and `<a href>` work in the preview.
 - At publish, each referenced file is copied to a public CDN and the URL rewritten to it. The CDN host is also allowlisted through the CSS sanitizer, so a published CSS `background-image: url(/dashboard/.../view)` survives.
-- CSS is the caveat: IN-APP, no host is allowlisted through the CSS sanitizer, so a CSS `url()` using a `/view` ref is stripped to `url("")` — the background renders BLANK in the preview and appears only on the published page. That blank preview is EXPECTED; do not "fix" it by swapping in a different URL. Publish to verify, or use an `<img>` (works in both contexts) when the preview matters.
+- CSS is mode-dependent: baseline preview can strip a file background whose resolved HTTPS host is not allowlisted; published file CDN hosts are allowlisted. Site mode permits resolved HTTPS CSS URLs in preview and publish. Relative `/view` references still need the file rewriting path; inspect the resolved URL and page mode rather than assuming all preview backgrounds must be blank. Use an `<img>` when preview portability matters.
 - The same `/view` URL also works as a plain `<a href>` link to the file.
 - Anything you embed this way becomes PUBLIC when the page is published — don't embed files that shouldn't be.
 
@@ -101,7 +101,7 @@ Field-list constraints (validated strictly; violations reject the call):
 - A hand-written `<form>` will NOT submit until a human wires it in the Canvas page's Forms settings tab — there is no tool for that step. If you do hand-write one, give every input a real `name` attribute: the tab derives the field list from your markup.
 - The field set is FIXED at wire time. Change the inputs before wiring; afterwards, the only path is delete-and-rewire.
 - One canvas can host many forms, but each Sheet accepts only one active form.
-- Submission works on the PUBLISHED page (publish scopes the CSP to the forms endpoint). The in-app preview keeps `form-action 'none'` — test submissions on the published URL, not in-app.
+- Test submissions on the published URL for final delivery proof. Baseline preview and publish can both permit connections to the configured app origin; site mode permits HTTPS connections. The provisioned handler uses `fetch`, so a preview attempt is possible when CSP, CORS and endpoint authorization allow it; preview success is not guaranteed. Native form submission is separately blocked in the in-app iframe because its sandbox omits `allow-forms`, even when CSP `form-action` permits the destination. Do not infer fetch authorization or native form support from CSP allowance alone.
 - Optional: an element with `data-role="form-status"` inside the form shows submit status messages.
 
 DO: provision first, paste `formHtml` unchanged, style it via CSS around/atop it.
