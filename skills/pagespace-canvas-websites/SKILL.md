@@ -37,7 +37,7 @@ CSP depends on the persisted `siteMode` flag, for both preview and publish. The 
 
 Site mode uses a wider CSP in both preview and publish: HTTPS scripts/styles/fonts, data fonts, HTTPS/WSS connections, HTTPS forms and frames, and the declared blob/data asset sources are permitted. `object-src 'none'`, `base-uri 'none'`, the deny-by-default floor and the absence of `unsafe-eval` remain. Check the page's actual mode before choosing external libraries, API connections or fonts; do not assume baseline restrictions apply to site mode.
 
-The CSS sanitizer still rewrites external `url()` values to `url("")` and strips `@import`, `expression()`, `javascript:`, `behavior:` and `data:text/html`. Use data image URIs for CSS backgrounds or HTTPS `<img>` elements. CSP permission alone does not override sanitizer restrictions, CORS or application authorization.
+CSS sanitization also follows the page mode. Baseline mode rewrites unapproved external `url()` values to `url("")` (explicit allowed HTTPS asset hosts may be retained) and blocks external imports. Site mode preserves HTTPS CSS URLs and HTTPS `@import`; plaintext HTTP, relative and malformed URLs remain blocked. Both modes allow image/font data URI MIME types at the sanitizer, but baseline CSP still blocks data fonts. Both modes block script-execution vectors such as `expression()`, `javascript:`, `behavior:` and `data:text/html`. CSP permission alone does not override sanitizer restrictions, CORS or application authorization.
 
 ## Dark/light theming
 
@@ -131,6 +131,6 @@ Publishing renders the canvas to a standalone HTML artifact served at `https://<
 - DON'T rely on `localStorage`, cookies, or cross-page JS state; each page is standalone and the origin is opaque.
 - DON'T use `/api/files/...` for file embeds — always `/dashboard/{driveId}/{filePageId}/view`.
 - DON'T write full `<html>` documents expecting the head to render in-app; write fragments and let publish-time extraction handle meta.
-- DON'T put external URLs in CSS `url()` — they are stripped; use `data:` URIs or `<img>` elements.
-- DON'T mistake a blank in-app CSS background using a `/view` file ref for a bug — CSS `url()` file refs render only on the published page.
+- Baseline CSS blocks unapproved external URLs/imports; site mode preserves HTTPS CSS URLs/imports. Use data image URIs or `<img>` where baseline restrictions apply.
+- For a blank CSS file background, check the resolved URL, asset host allowance and page mode in preview and publish; relative URLs may be blocked by sanitization.
 - DON'T edit provisioned `formHtml`, and DON'T leave links pointing at pages that won't be published.
