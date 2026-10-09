@@ -24,20 +24,20 @@ You are building on a CANVAS page: raw HTML/CSS/JS stored as the page's content,
 
 In-app, the canvas renders in an iframe with `sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"` — never `allow-same-origin`. Your document is an opaque origin, walled off from the logged-in app session. Consequences:
 
-- No PageSpace cookies or session. `fetch()` to app APIs will not be authenticated — and is blocked by CSP anyway.
+- No PageSpace cookies or session. `fetch()` to app APIs does not inherit the logged-in session. CSP, CORS and application authorization are separate controls.
 - Treat `localStorage`/`sessionStorage` as unavailable; keep state in JS variables in memory.
 - No DOM access to the parent app; the only channel is `postMessage` (used by the theme bridge below).
 - In-app, a `<base target="_blank">` is injected: every link without an explicit `target` opens in a new browser tab. Published pages have no base tag — links navigate normally.
 
-Both contexts also carry this CSP: `default-src 'none'; img-src data: https:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; object-src 'none'; base-uri 'none'; form-action 'none'` (on PUBLISHED pages, form-action/connect-src are widened to the PageSpace app origin unconditionally — wired forms or not; the in-app preview never widens). In practice:
+CSP depends on the persisted `siteMode` flag, for both preview and publish. The baseline (`siteMode: false` or absent) carries `default-src 'none'; img-src data: https:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; object-src 'none'; base-uri 'none'`. When a PageSpace app origin is configured, baseline preview and publish scope `connect-src` to that origin and permit forms to self/app origin; without it connections and form submissions are blocked. In baseline mode:
 
-- Inline `<script>` runs; `<script src="https://cdn...">` is BLOCKED (`script-src` has no https: source). No CDN frameworks — write vanilla JS.
-- External stylesheets are blocked EXCEPT Google Fonts: a `<link>` to `fonts.googleapis.com` plus font files from `fonts.gstatic.com` are explicitly allowlisted.
-- `<img src="https://...">` and `data:` images are allowed by CSP — but the CSS sanitizer rewrites any external `url()` in CSS to `url("")`, so `background-image: url(https://...)` dies even though `<img>` works. In CSS, use `data:` URIs (image MIME types only; data font URLs are blocked by font-src). The sanitizer also strips `@import`, `expression()`, `javascript:`, `behavior:`, and `data:text/html`.
-- In-app `fetch()`/XHR connections are blocked by CSP. Published pages allow connections only to the PageSpace app origin; this is a CSP allowance, not app authorization or a limitation to the wired-form endpoint.
+- Inline scripts run; external script hosts are blocked. External stylesheets/fonts are limited to Google Fonts.
+- HTTPS/data images are allowed. Data font URLs are blocked by baseline `font-src`.
+- Fetch/XHR is limited to the configured app origin, when present. This permits connection attempts, not authenticated access or only the wired-form endpoint.
 
-DO: `<link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">`, `<img src="https://example.com/photo.jpg">`, inline `<script>` for all interactivity.
-DON'T: `<script src="https://cdn.jsdelivr.net/npm/react"></script>`, `fetch('https://api.example.com/...')`, `background: url(https://example.com/bg.jpg)`.
+Site mode uses a wider CSP in both preview and publish: HTTPS scripts/styles/fonts, data fonts, HTTPS/WSS connections, HTTPS forms and frames, and the declared blob/data asset sources are permitted. `object-src 'none'`, `base-uri 'none'`, the deny-by-default floor and the absence of `unsafe-eval` remain. Check the page's actual mode before choosing external libraries, API connections or fonts; do not assume baseline restrictions apply to site mode.
+
+The CSS sanitizer still rewrites external `url()` values to `url("")` and strips `@import`, `expression()`, `javascript:`, `behavior:` and `data:text/html`. Use data image URIs for CSS backgrounds or HTTPS `<img>` elements. CSP permission alone does not override sanitizer restrictions, CORS or application authorization.
 
 ## Dark/light theming
 
@@ -126,8 +126,8 @@ Publishing renders the canvas to a standalone HTML artifact served at `https://<
 
 ## Common pitfalls
 
-- DON'T assume CDN libraries, external scripts, or external stylesheets (Google Fonts is the sole styling exception). Everything ships inline.
-- In-app CSP blocks `fetch`/XHR connections. Published CSP permits connections to the PageSpace app origin, not arbitrary hosts; CORS and app authorization still apply. Prefer wired forms for supported public submissions and never assume a logged-in session.
+- Check `siteMode`: baseline external scripts are blocked and styling hosts are limited; site mode permits HTTPS scripts/styles/fonts.
+- Baseline connections are restricted to the configured app origin, or blocked without one; site mode permits HTTPS/WSS connections in preview and publish. CORS and application authorization still apply. Prefer wired forms for supported public submissions and never assume a logged-in session.
 - DON'T rely on `localStorage`, cookies, or cross-page JS state; each page is standalone and the origin is opaque.
 - DON'T use `/api/files/...` for file embeds — always `/dashboard/{driveId}/{filePageId}/view`.
 - DON'T write full `<html>` documents expecting the head to render in-app; write fragments and let publish-time extraction handle meta.
