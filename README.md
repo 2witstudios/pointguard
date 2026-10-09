@@ -10,6 +10,7 @@ diverge freely. PageSpace-aware where it helps, never required.
 
 | Skill | What it does |
 |---|---|
+| `design` | Explore UI directions and interactive prototypes in PageSpace Canvases, verify and refine them, then hand off the selected source revision. Codex `$design` / `/prompts:design`, OpenCode `/design`, Claude Code `/pg:design`. |
 | `review` | Full code review, including an explicit OWASP Top 10 pass → publishes a review record to the repo's PageSpace drive, links it from tasks, posts the verdict on the PR. `/review` |
 | `pr` | Open/update a PR whose description links the PageSpace task, plan and prompt pages. `/pr` |
 | `handoff` | Hand a finished branch to review in one step: push, PR, handoff page, task moves, parent notify. `/handoff` |
@@ -35,6 +36,15 @@ installed.
 Links each skill into `~/.claude/skills`, `~/.config/opencode/skills`, and
 `~/.agents/skills`. This repo is the single source of truth — edit here, every
 agent sees the change.
+
+The design workflow has one shared skill body and thin command wrappers. Claude
+Code uses `~/.claude/commands/pg/design.md` for `/pg:design`; OpenCode uses
+`~/.config/opencode/commands/design.md` for `/design`; Codex discovers `$design`
+through `~/.agents/skills` and also gets `/prompts:design`. These wrappers load
+the shared skill without depending on Claude Design or a model provider.
+To install only these new entries, run `zsh ./install-design.sh`. The installer
+preserves unrelated existing entries. Restart the agents after installation.
+PageSpace authoring dependencies are included in the full `./install.sh` install.
 
 ## Attribution
 
