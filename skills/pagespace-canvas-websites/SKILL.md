@@ -22,7 +22,7 @@ You are building on a CANVAS page: raw HTML/CSS/JS stored as the page's content,
 
 ## The sandbox and what it blocks
 
-In-app, the canvas renders in an iframe with `sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"` — never `allow-same-origin`. Your document is an opaque origin, walled off from the logged-in app session. Consequences:
+In-app, the canvas renders in an iframe with `sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"` — never `allow-same-origin`. Your document is an opaque origin, walled off from the logged-in app session. Consequences:
 
 - No PageSpace cookies or session. `fetch()` to app APIs does not inherit the logged-in session. CSP, CORS and application authorization are separate controls.
 - Treat `localStorage`/`sessionStorage` as unavailable; keep state in JS variables in memory.
@@ -101,7 +101,7 @@ Field-list constraints (validated strictly; violations reject the call):
 - A hand-written `<form>` will NOT submit until a human wires it in the Canvas page's Forms settings tab — there is no tool for that step. If you do hand-write one, give every input a real `name` attribute: the tab derives the field list from your markup.
 - The field set is FIXED at wire time. Change the inputs before wiring; afterwards, the only path is delete-and-rewire.
 - One canvas can host many forms, but each Sheet accepts only one active form.
-- Test submissions on the published URL for final delivery proof. Baseline preview and publish can both permit connections to the configured app origin; site mode permits HTTPS connections. The provisioned handler uses `fetch`, so a preview attempt is possible when CSP, CORS and endpoint authorization allow it; preview success is not guaranteed. Native form submission is separately blocked in the in-app iframe because its sandbox omits `allow-forms`, even when CSP `form-action` permits the destination. Do not infer fetch authorization or native form support from CSP allowance alone.
+- Test submissions on the published URL for final delivery proof. Baseline preview and publish can both permit connections to the configured app origin; site mode permits HTTPS connections. The provisioned handler uses `fetch`, so a preview attempt is possible when CSP, CORS and endpoint authorization allow it; preview success is not guaranteed. Native form submission additionally depends on iframe sandbox permissions: the current CanvasFrame includes `allow-forms`; a different preview sandbox may not. Even with that token, CSP `form-action`, destination authorization and response/navigation behavior still apply. The provisioned fetch handler prevents native navigation. Do not infer authenticated access or successful submission from CSP allowance alone.
 - Optional: an element with `data-role="form-status"` inside the form shows submit status messages.
 
 DO: provision first, paste `formHtml` unchanged, style it via CSS around/atop it.
