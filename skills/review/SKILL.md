@@ -3,7 +3,7 @@ name: review
 description: >
   Review a pull request for code quality, best practices, security, test coverage and adherence to
   the slice plan's acceptance criteria, then post the review as one PR comment ending in a verdict
-  line that the builder's Ralph loop consumes. Use when reviewing code, a pull request or a branch,
+  line that the builder's PR loop consumes. Use when reviewing code, a pull request or a branch,
   or when the user says "/review".
 compatibility: Requires git and the gh CLI; the pagespace CLI to read the plan.
 ---
@@ -13,7 +13,7 @@ compatibility: Requires git and the gh CLI; the pagespace CLI to read the plan.
 # 🔬 Code Review
 
 Act as a top-tier principal software engineer reviewing a slice PR asynchronously. Your review is a PR
-comment. The builder's Ralph loop reads it, fixes or answers each finding, and cannot emit PR_READY
+comment. The builder's PR loop reads it, fixes or answers each finding, and cannot emit PR_READY
 while a review thread is unresolved. You never block the builder, set a status or merge.
 
 Criteria {
@@ -26,6 +26,8 @@ For runtime changes, list each current OWASP Top 10 category and account for it 
 Read the slice plan the PR links. Extract every "Given X, should Y" criterion in its task list and mark each PASS / FAIL / PARTIAL with code and test path:line.
 Check privacy and telemetry: every new log field, column, payload kind, topic field and analytics event is classified; no personal, sensitive or secret value reaches a log, an error report or analytics.
 Look for redundancies, dead code, forgotten files and incomplete moves or deletions. Simplicity is removing the obvious and adding the meaningful.
+Judge against intent and the ideal design, not only the existing code: does the design serve the stated intent, and is it the best way or just consistent with what exists? Consistent-with-flawed-code is not a pass.
+Check concept boundaries against the repository's architecture rules (Daisy: AGENTS.md "Architecture rules"): do the names and the organization match the product's concepts? A breach of those rules (concept coupling) is a BLOCKER, never a minor.
 }
 
 Constraints {
@@ -51,7 +53,7 @@ ReviewProcess {
 4. Performance
 5. Security (deep scan, including visible keys)
 6. UI/UX and accessibility
-7. Architecture and design decisions
+7. Architecture and design decisions, including concept boundaries (coupling is a blocker) and whether the design serves the intent
 8. Documentation and commit messages
 9. Criteria table against the plan
 10. Post the comment per Post{} before finishing — a review that only exists in chat is not done.
@@ -69,7 +71,7 @@ Post {
    ### Verdict — the next line, exactly: `<n> blocker / <n> major / <n> minor / <n> nit — <APPROVE | APPROVE WITH MINORS | CHANGES REQUESTED>`
    Approve only with zero blockers and zero majors. The merge automation reads this exact line (Daisy: a merge moves the PR's tasks to Done only when the latest verdict approves).
 2. Post it: `gh pr comment <n> --body-file <file>`. Put a finding tied to one line in an inline review comment as well, so it gets its own thread.
-3. Findings outside the slice: file each as an `ISSUE-n` in the drive's Issues list naming the PR as origin, and put the issue link in the finding.
+3. Findings outside the slice: file each as an `ISSUE-n` in one of the drive's Issues buckets (`bun board:create --issue --bucket <name>`) naming the PR as origin, and put the issue link in the finding.
 4. Reply in chat with a pointer, not the review: verdict, counts and the comment URL. If you were spawned as a reviewer, you are done; the builder kills you.
    }
 
